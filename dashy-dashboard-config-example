@@ -30,8 +30,8 @@ ________________________________________________________________________________
       "enableGuestAccess": true,
       "users": [
         {
-          "user": "liagen",
-          "hash": "15b89b594d5abf25e1d63fae26c3adcb62aaaaad20a0e220895010167327bc53",
+          "user": "admin",
+          "hash": "",
           "type": "admin"
         }
       ],
