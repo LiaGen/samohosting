@@ -146,7 +146,7 @@ ________________________________________________________________________________
         {
           "title": "samohoting.ru",
           "description": "или самохостинг.рф",
-          "icon": "https://www.clipartmax.com/png/middle/250-2503250_dummies.png",
+          "icon": "https://github.com/LiaGen/samohosting/blob/main/dummiesguylogo.jpg?raw=true",
           "url": "https://www.samohosting.ru/",
           "target": "newtab",
           "id": "0_22831_samohotingru"
@@ -154,7 +154,7 @@ ________________________________________________________________________________
         {
           "title": "homelab-for-dummies.fun",
           "description": "english version",
-          "icon": "https://www.clipartmax.com/png/middle/250-2503250_dummies.png",
+          "icon": "https://github.com/LiaGen/samohosting/blob/main/dummiesguylogo.jpg?raw=true",
           "url": "https://homelab-for-dummies.fun/",
           "target": "newtab",
           "id": "1_22831_homelabfordummiesfun"
