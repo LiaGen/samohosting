@@ -1,0 +1,22 @@
+version: '1'
+
+services:
+  grist:
+    image: gristlabs/grist-omnibus  # or grist-ee-omnibus for enterprise
+    container_name: grist
+    environment:
+      - EMAIL=email@gmail.com 
+      - PASSWORD=strongpassword
+      - EMAIL1=email1@gmail.com 
+      - PASSWORD1=strongpassword1
+      # add as many hard coded users as you need
+      - TEAM=TestTeam 
+      - URL=https://192.168.1.100:8080 # your local
+      #- URL=https://your.domain.ru # or not local 
+      - HTTPS=auto
+    ports:
+      - "8080:80"
+      - "4443:443"
+    volumes:
+      # You may want to put state somewhere other than /tmp :-)
+      - /portainer_data/gristomnibus/data:/persist
