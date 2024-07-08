@@ -1,0 +1,24 @@
+#example of my yaml config
+
+version: '3'
+
+services:
+  grist:
+    image: gristlabs/grist 
+    environment:
+      # - GRIST_SINGLE_ORG=ORG_NAME
+      - GRIST_DEFAULT_EMAIL=email@gmail.com
+      - GRIST_FORCE_LOGIN=true
+      - GRIST_SESSION_SECRET=TOPSECRET
+      # APP_HOME_URL="https://grist.example.com"
+      - GRIST_PAGE_TITLE_SUFFIX=ORG_NAME.ru
+      # GRIST_WIDGET_LIST_URL="https://github.com/gristlabs/grist-widget/releases/download/latest/manifest.json"
+      # GRIST_FORWARD_AUTH_HEADER: X-Forwarded-User
+      # GRIST_FORWARD_AUTH_LOGOUT_PATH: _oauth/logout
+      # GRIST_SINGLE_ORG: grist  # alternatively, GRIST_ORG_IN_PATH: "true" for multi-team operation
+      # APP_HOME_URL: https://${DOMAIN}
+    ports:
+      - "8484:8484"
+    volumes:
+      # You may want to put state somewhere other than /tmp :-)
+      - /portainer_data/grist/data:/persist
