@@ -1,0 +1,47 @@
+---
+version: "2"
+services:
+  nextcloud:
+    image: linuxserver/nextcloud
+    container_name: nextcloud
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+    volumes:
+      - nextcloud_storage:/config
+    ports:
+      - 443:443
+      - 8080:80
+    restart: unless-stopped
+    networks:
+      - default
+    depends_on:
+      - nextcloud_db
+  nextcloud_db:
+    image: linuxserver/mariadb
+    container_name: nextcloud_db
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - MYSQL_ROOT_PASSWORD=nextcloud
+      - TZ=${Timezone}
+      - MYSQL_DATABASE=nextcloud_db
+      - MYSQL_USER=nextcloud
+      - MYSQL_PASSWORD=nextcloud
+    ports:
+      - 3306:3306
+    volumes:
+      - nextcloud_db:/config
+    restart: unless-stopped
+    networks:
+      - default
+
+
+networks:
+  default:
+
+volumes:
+  nextcloud_storage:
+  nextcloud_db:
+  
