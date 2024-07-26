@@ -1,0 +1,47 @@
+services:
+  windowstinycore:
+    image: dockurr/windows
+    container_name: windowstinycore
+    environment:
+      VERSION: "core11"
+      REGION: "en-US"
+      KEYBOARD: "en-US"
+      DISK_SIZE: "10G"
+      RAM_SIZE: "4G"
+      CPU_CORES: "4"
+
+      # By default, a user called Docker is created during the installation, with an empty password
+      # USERNAME: "bill"
+      # PASSWORD: "gates"
+      # KVM: "N" #if need to switch off kvm - uncomment but device need to be commented out
+    devices:
+      - /dev/kvm
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 8106:8006
+      - 3319:3389/tcp
+      - 3319:3389/udp
+    stop_grace_period: 2m
+
+
+  windowsxp:
+    image: dockurr/windows
+    container_name: windowsxp
+    environment:
+      VERSION: "winxp"
+      REGION: "en-US"
+      KEYBOARD: "en-US"
+      DISK_SIZE: "10G"
+      RAM_SIZE: "2G"
+      CPU_CORES: "4"
+      # KVM: "N" #if need to switch off kvm - uncomment but device need to be commented out
+    devices:
+      - /dev/kvm
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 8206:8006
+      - 3329:3389/tcp
+      - 3329:3389/udp
+    stop_grace_period: 2m
