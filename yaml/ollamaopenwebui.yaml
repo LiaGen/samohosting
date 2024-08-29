@@ -1,0 +1,46 @@
+services:
+  ollama:
+    image: ollama/ollama
+    # image: ollama/ollama:rocm #с rocm для версии амд видеокарт
+    container_name: ollama
+    tty: true
+    volumes:
+      - ollama:/root/.ollama
+    restart: unless-stopped
+    devices:
+     # - "/dev/dri/renderD128:/dev/dri/renderD128" #с rocm для версии амд видеокарт
+     # - "/dev/kfd:/dev/kfd" #с rocm для версии амд видеокарт
+     # - "/dev/dri/card0:/dev/dri/card0" #с rocm для версии амд видеокарт
+    security_opt:
+      - "seccomp:unconfined"
+    group_add:
+      - video
+    environment:
+     # - 'HSA_OVERRIDE_GFX_VERSION=10.3.0' #с rocm для версии амд видеокарт
+     # - 'HCC_AMDGPU_TARGETS=gfx1030' #с rocm для версии амд видеокарт
+     # - 'OLLAMA_LLM_LIBRARY=rocm_v60002' #с rocm для версии амд видеокарт
+
+  open-webui:
+    build:
+      context: .
+      args:
+        OLLAMA_BASE_URL: '/ollama'
+      dockerfile: Dockerfile
+    image: ghcr.io/open-webui/open-webui:${WEBUI_DOCKER_TAG-main}
+    container_name: open-webui
+    volumes:
+      - open-webui:/app/backend/data
+    depends_on:
+      - ollama
+    ports:
+      - ${OPEN_WEBUI_PORT-3000}:8080
+    environment:
+      - 'OLLAMA_BASE_URL=http://ollama:11434'
+      #- 'WEBUI_SECRET_KEY='
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    restart: unless-stopped
+
+volumes:
+  ollama: {}
+  open-webui: {}
