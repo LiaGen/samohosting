@@ -1,0 +1,19 @@
+version: '2.0'
+services:
+  trilium:
+    image: zadam/trilium
+    restart: always
+    environment:
+      - TRILIUM_DATA_DIR=/home/node/trilium-data
+    ports:
+      - "8480:8080"
+    volumes:
+      - /portainer_data/trilium-data:/home/node/trilium-data
+  memos:
+    image: neosmemo/memos:stable
+    restart: always
+
+    ports:
+      - "5230:5230"
+    volumes:
+      - /portainer_data/memos/:/var/opt/memos
