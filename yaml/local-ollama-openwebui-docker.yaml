@@ -1,0 +1,47 @@
+services:
+  ollama:
+    image: ollama/ollama  #for CPU\NVIDIA GPU
+    # image: ollama/ollama:rocm  #for AMD GPU
+    # image: ollama/ollama:0.1.27-rocm #how you can specify version
+    container_name: ollama-samohosting
+    tty: true
+    volumes:
+      - ollama:/root/.ollama
+    restart: unless-stopped
+    # devices: #for GPU usage
+      # - "/dev/dri/renderD128:/dev/dri/renderD128"
+      # - "/dev/kfd:/dev/kfd"
+      # - "/dev/dri/card0:/dev/dri/card0"
+    # group_add:
+    #   - video
+    security_opt:
+      - "seccomp:unconfined"
+    # environment: #may be needed for AMD GPU usage. Google how use your GPU with ollama docker
+    #   - 'HSA_OVERRIDE_GFX_VERSION=10.3.0'
+    #   - 'HCC_AMDGPU_TARGETS=gfx1030'
+    #   - 'OLLAMA_LLM_LIBRARY=rocm_v60002'
+
+  open-webui:
+    build:
+      context: .
+      args:
+        OLLAMA_BASE_URL: '/ollama'
+      dockerfile: Dockerfile
+    image: ghcr.io/open-webui/open-webui:${WEBUI_DOCKER_TAG-main}
+    container_name: open-webui-samohosting
+    volumes:
+      - open-webui:/app/backend/data
+    depends_on:
+      - ollama
+    ports:
+      - ${OPEN_WEBUI_PORT-3001}:8080
+    environment:
+      - 'OLLAMA_BASE_URL=http://ollama:11434'
+      # - 'WEBUI_SECRET_KEY=' #if secure way of connection needed
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    restart: unless-stopped
+
+volumes:
+  ollama: {}
+  open-webui: {}
