@@ -87,6 +87,10 @@ if [[ ${prompt,,} =~ ^(y|yes)$ ]]; then
     -v portainer_data:/data \
     portainer/portainer-ce:latest
   msg_ok "Installed Portainer $PORTAINER_LATEST_VERSION"
+if [[ ${prompt,,} =~ ^(n|no)$ ]]; then
+  msg_info "Кто не курит и не пьет, тот здоровеньким помрет!"
+  msg_info "Установщик покидает чат"
+
 start
 build_container
 description
