@@ -61,7 +61,7 @@ if systemctl is-active -q ping-instances.service; then
   systemctl stop ping-instances.service
 fi
 header_info
-whiptail --backtitle "Samohosting.ru" --title "создание LXCs" --ДАНЕТ "Нажмите "ДА" хотите создать LXC контейнеры. Погнали?" 10 68 || exit
+whiptail --backtitle "Samohosting.ru" --title "создание LXCs" --yesno "Нажмите "YES" хотите создать LXC контейнеры. Погнали?" 10 68 || exit
 SAMOHOSTING_MENU=()
 MSG_MAX_LENGTH=0
 while read -r TAG ITEM; do
