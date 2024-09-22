@@ -76,17 +76,8 @@ cat <<"EOF"
 EOF
 read -r -p "Может лучше пива? <y/N> " prompt
 if [[ ${prompt,,} =~ ^(y|yes)$ ]]; then
-  msg_info "Installing Portainer $PORTAINER_LATEST_VERSION"
-  docker volume create portainer_data >/dev/null
-  $STD docker run -d \
-    -p 8000:8000 \
-    -p 9443:9443 \
-    --name=portainer \
-    --restart=always \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    -v portainer_data:/data \
-    portainer/portainer-ce:latest
-  msg_ok "Installed Portainer $PORTAINER_LATEST_VERSION"
+  msg_info "Ищу ближайший магазин... "
+  msg_ok "Близжайший магазин найден, выдвигаемся.."
 if [[ ${prompt,,} =~ ^(n|no)$ ]]; then
   msg_info "Кто не курит и не пьет, тот здоровеньким помрет!"
   msg_info "Установщик покидает чат"
