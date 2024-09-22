@@ -24,3 +24,5 @@ if [[ ${prompt,,} =~ ^(y|yes)$ ]]; then
 if [[ ${prompt,,} =~ ^(n|no)$ ]]; then
   msg_info "Установщик покидает чат\n"
   msg_ok "Completed Successfully!\n"
+fi
+  msg_info "нет, не пить - нельзя\n"
