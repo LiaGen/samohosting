@@ -63,7 +63,7 @@ exit
 }
 
 start
-read -r -p "Would you like to add Portainer? <y/N> " prompt
+read -r -p "Может лучше пива? <y/N> " prompt
 if [[ ${prompt,,} =~ ^(y|yes)$ ]]; then
   msg_info "Installing Portainer $PORTAINER_LATEST_VERSION"
   docker volume create portainer_data >/dev/null
