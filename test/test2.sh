@@ -26,4 +26,4 @@ if [[ ${prompt,,} =~ ^(y|yes)$ ]]; then
      msg_ok "Completed Successfully!\n"
     fi
       msg_info "нет, не пить - нельзя\n"
-      msg_info "Кто не курит и не пьет, тот здоровеньким помрет!\n"
+      msg_ok "Кто не курит и не пьет, тот здоровеньким помрет!\n"
