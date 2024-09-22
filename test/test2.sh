@@ -14,7 +14,6 @@ function header_info {
   ____) / ____ \| |  | | |__| | |  | | |__| |____) |  | |   _| |_| |\  | |__| |_| | \ \| |__| |
  |_____/_/    \_|_|  |_|\____/|_|  |_|\____/|_____/   |_|  |_____|_| \_|\_____(_|_|  \_\\____/ 
                                                                                                
-                                                                                                                        /___/
 EOF
 }
 
@@ -59,7 +58,7 @@ if systemctl is-active -q ping-instances.service; then
   systemctl stop ping-instances.service
 fi
 header_info
-whiptail --backtitle "Помощник от Samohosting.ru для установки LXC в ProxmoxVE" --title "TurnKey LXCs" --yesno "Нажмите "Yes", если готовы войти в матрицу домашнего сервера. Погнали?" 10 68 || exit
+whiptail --backtitle "Помощник от Samohosting.ru для установки TurnKey LXC в ProxmoxVE" --title "Установщик LXCs" --yesno "Нажмите "Yes", если готовы войти в матрицу домашнего сервера. Погнали?" 10 68 || exit
 TURNKEY_MENU=()
 MSG_MAX_LENGTH=0
 while read -r TAG ITEM; do
@@ -79,7 +78,7 @@ gitea Gitea
 gitlab GitLab
 invoice-ninja Invoice Ninja
 mediaserver Media Server
-nextcloud Nextcloud
+nextcloud НЕКСТКЛАУД
 observium Observium
 odoo Odoo
 openvpn OpenVPN
