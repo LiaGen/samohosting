@@ -8,7 +8,14 @@ function header_info {
   clear
   cat <<"EOF"
        
-SAMOHOSTING
+   _____         __  __  ____  _    _  ____   _____ _______ _____ _   _  _____   _____  _    _ 
+  / ____|  /\   |  \/  |/ __ \| |  | |/ __ \ / ____|__   __|_   _| \ | |/ ____| |  __ \| |  | |
+ | (___   /  \  | \  / | |  | | |__| | |  | | (___    | |    | | |  \| | |  __  | |__) | |  | |
+  \___ \ / /\ \ | |\/| | |  | |  __  | |  | |\___ \   | |    | | | . ` | | |_ | |  _  /| |  | |
+  ____) / ____ \| |  | | |__| | |  | | |__| |____) |  | |   _| |_| |\  | |__| |_| | \ \| |__| |
+ |_____/_/    \_|_|  |_|\____/|_|  |_|\____/|_____/   |_|  |_____|_| \_|\_____(_|_|  \_\\____/ 
+                                                                                               
+                                                                                               
    
 EOF
 }
@@ -54,7 +61,7 @@ if systemctl is-active -q ping-instances.service; then
   systemctl stop ping-instances.service
 fi
 header_info
-whiptail --backtitle "Samohosting.ru" --title "создание LXCs" --yesno "Нажмите "ДА" хотите создать LXC контейнеры. Погнали?" 10 68 || exit
+whiptail --backtitle "Samohosting.ru" --title "создание LXCs" --ДАНЕТ "Нажмите "ДА" хотите создать LXC контейнеры. Погнали?" 10 68 || exit
 SAMOHOSTING_MENU=()
 MSG_MAX_LENGTH=0
 while read -r TAG ITEM; do
