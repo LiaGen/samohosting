@@ -1,20 +1,17 @@
 #!/usr/bin/env bash
-# Copyright (c) 2024 samohosting.ru
-# Author: samohosting.ru
+# Copyright (c) 2021-2024 tteck
+# Author: tteck (tteckster)
 # License: MIT
-# https://github.com/link/LICENSE
+# https://github.com/tteck/Proxmox/raw/main/LICENSE
 
 function header_info {
   clear
-  cat <<"EOF" 
-   _____         __  __  ____  _    _  ____   _____ _______ _____ _   _  _____   _____  _    _ 
-  / ____|  /\   |  \/  |/ __ \| |  | |/ __ \ / ____|__   __|_   _| \ | |/ ____| |  __ \| |  | |
- | (___   /  \  | \  / | |  | | |__| | |  | | (___    | |    | | |  \| | |  __  | |__) | |  | |
-  \___ \ / /\ \ | |\/| | |  | |  __  | |  | |\___ \   | |    | | | . ` | | |_ | |  _  /| |  | |
-  ____) / ____ \| |  | | |__| | |  | | |__| |____) |  | |   _| |_| |\  | |__| |_| | \ \| |__| |
- |_____/_/    \_|_|  |_|\____/|_|  |_|\____/|_____/   |_|  |_____|_| \_|\_____(_|_|  \_\\____/ 
-                                                                                               
- 
+  cat <<"EOF"
+ ______              __ __           __   _  _______
+/_  __/_ _________  / //_/__ __ __  / /  | |/_/ ___/
+ / / / // / __/ _ \/ ,< / -_) // / / /___>  </ /__
+/_/  \_,_/_/ /_//_/_/|_|\__/\_, / /____/_/|_|\___/
+                           /___/
 EOF
 }
 
@@ -59,13 +56,13 @@ if systemctl is-active -q ping-instances.service; then
   systemctl stop ping-instances.service
 fi
 header_info
-whiptail --backtitle "Samohosting.ru" --title "создание LXCs" --yesno "Нажмите "YES" хотите создать LXC контейнеры. Погнали?" 10 68 || exit
-SAMOHOSTING_MENU=()
+whiptail --backtitle "Proxmox VE Helper Scripts" --title "TurnKey LXCs" --yesno "This will allow for the creation of one of the many TurnKey LXC Containers. Proceed?" 10 68 || exit
+TURNKEY_MENU=()
 MSG_MAX_LENGTH=0
 while read -r TAG ITEM; do
   OFFSET=2
   ((${#ITEM} + OFFSET > MSG_MAX_LENGTH)) && MSG_MAX_LENGTH=${#ITEM}+OFFSET
-  SAMOHOSTING_MENU+=("$TAG" "$ITEM " "OFF")
+  TURNKEY_MENU+=("$TAG" "$ITEM " "OFF")
 done < <(
   cat <<EOF
 ansible Ansible
@@ -91,10 +88,10 @@ wordpress Wordpress
 zoneminder ZoneMinder
 EOF
 )
-turnkey=$(whiptail --backtitle "Samohosting.ru" --title ""Samohosting.ru LXCs" --radiolist "\nвыберите LXC для создания:\n" 16 $((MSG_MAX_LENGTH + 58)) 6 "${SAMOHOSTING_MENU[@]}" 3>&1 1>&2 2>&3 | tr -d '"') || exit
+turnkey=$(whiptail --backtitle "Proxmox VE Helper Scripts" --title "TurnKey LXCs" --radiolist "\nSelect a TurnKey LXC to create:\n" 16 $((MSG_MAX_LENGTH + 58)) 6 "${TURNKEY_MENU[@]}" 3>&1 1>&2 2>&3 | tr -d '"') || exit
 [ -z "$turnkey" ] && {
-  whiptail --backtitle "Samohosting.ru" --title "Вы не выбрали LXC к установке" --msgbox "Вы не выбрали LXC к установке" 10 68
-  msg "Готово"
+  whiptail --backtitle "Proxmox VE Helper Scripts" --title "No TurnKey LXC Selected" --msgbox "It appears that no TurnKey LXC container was selected" 10 68
+  msg "Done"
   exit
 }
 
@@ -104,7 +101,7 @@ CTID=$(pvesh get /cluster/nextid)
 PCT_OPTIONS="
     -features keyctl=1,nesting=1
     -hostname turnkey-${turnkey}
-    -tags proxmox-samohosting
+    -tags proxmox-helper-scripts
     -onboot 1
     -cores 2
     -memory 2048
@@ -149,17 +146,17 @@ function select_storage() {
 
   # Select storage location
   if [ $((${#MENU[@]} / 3)) -eq 0 ]; then
-    warn "'$CONTENT_LABEL' требуется выбрать хотябы 1 хранилище."
-    die "Не найдены доступные хранилища."
+    warn "'$CONTENT_LABEL' needs to be selected for at least one storage location."
+    die "Unable to detect valid storage location."
   elif [ $((${#MENU[@]} / 3)) -eq 1 ]; then
     printf ${MENU[0]}
   else
     local STORAGE
     while [ -z "${STORAGE:+x}" ]; do
-      STORAGE=$(whiptail --backtitle "Samohosting.ru" --title "Выберите" --radiolist \
-        "Какой storage pool вы бы хотели использовать для ${CONTENT_LABEL,,}?\n\n" \
+      STORAGE=$(whiptail --backtitle "Proxmox VE Helper Scripts" --title "Storage Pools" --radiolist \
+        "Which storage pool you would like to use for the ${CONTENT_LABEL,,}?\n\n" \
         16 $(($MSG_MAX_LENGTH + 23)) 6 \
-        "${MENU[@]}" 3>&1 1>&2 2>&3) || die "Отменено."
+        "${MENU[@]}" 3>&1 1>&2 2>&3) || die "Menu aborted."
     done
     printf $STORAGE
   fi
