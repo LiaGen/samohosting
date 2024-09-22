@@ -1,17 +1,20 @@
 #!/usr/bin/env bash
-# Copyright (c) 2021-2024 tteck
-# Author: tteck (tteckster)
+# Copyright (c) 2024 samohosting.ru
+# Author: samohosting.ru
 # License: MIT
-# https://github.com/tteck/Proxmox/raw/main/LICENSE
+# https://github.com/link_to_be_placed/LICENSE
 
 function header_info {
   clear
   cat <<"EOF"
- ______              __ __           __   _  _______
-/_  __/_ _________  / //_/__ __ __  / /  | |/_/ ___/
- / / / // / __/ _ \/ ,< / -_) // / / /___>  </ /__
-/_/  \_,_/_/ /_//_/_/|_|\__/\_, / /____/_/|_|\___/
-                           /___/
+   _____         __  __  ____  _    _  ____   _____ _______ _____ _   _  _____   _____  _    _ 
+  / ____|  /\   |  \/  |/ __ \| |  | |/ __ \ / ____|__   __|_   _| \ | |/ ____| |  __ \| |  | |
+ | (___   /  \  | \  / | |  | | |__| | |  | | (___    | |    | | |  \| | |  __  | |__) | |  | |
+  \___ \ / /\ \ | |\/| | |  | |  __  | |  | |\___ \   | |    | | | . ` | | |_ | |  _  /| |  | |
+  ____) / ____ \| |  | | |__| | |  | | |__| |____) |  | |   _| |_| |\  | |__| |_| | \ \| |__| |
+ |_____/_/    \_|_|  |_|\____/|_|  |_|\____/|_____/   |_|  |_____|_| \_|\_____(_|_|  \_\\____/ 
+                                                                                               
+                                                                                                                        /___/
 EOF
 }
 
@@ -56,7 +59,7 @@ if systemctl is-active -q ping-instances.service; then
   systemctl stop ping-instances.service
 fi
 header_info
-whiptail --backtitle "Proxmox VE Helper Scripts" --title "TurnKey LXCs" --yesno "This will allow for the creation of one of the many TurnKey LXC Containers. Proceed?" 10 68 || exit
+whiptail --backtitle "Помощник от Samohosting.ru для установки LXC в ProxmoxVE" --title "TurnKey LXCs" --yesno "Нажмите "Yes", если готовы войти в матрицу домашнего сервера. Погнали?" 10 68 || exit
 TURNKEY_MENU=()
 MSG_MAX_LENGTH=0
 while read -r TAG ITEM; do
@@ -88,9 +91,9 @@ wordpress Wordpress
 zoneminder ZoneMinder
 EOF
 )
-turnkey=$(whiptail --backtitle "Proxmox VE Helper Scripts" --title "TurnKey LXCs" --radiolist "\nSelect a TurnKey LXC to create:\n" 16 $((MSG_MAX_LENGTH + 58)) 6 "${TURNKEY_MENU[@]}" 3>&1 1>&2 2>&3 | tr -d '"') || exit
+turnkey=$(whiptail --backtitle "Помощник от Samohosting.ru для установки LXC в ProxmoxVE" --title "TurnKey LXCs" --radiolist "\nSelect a TurnKey LXC to create:\n" 16 $((MSG_MAX_LENGTH + 58)) 6 "${TURNKEY_MENU[@]}" 3>&1 1>&2 2>&3 | tr -d '"') || exit
 [ -z "$turnkey" ] && {
-  whiptail --backtitle "Proxmox VE Helper Scripts" --title "No TurnKey LXC Selected" --msgbox "It appears that no TurnKey LXC container was selected" 10 68
+  whiptail --backtitle "Помощник от Samohosting.ru для установки LXC в ProxmoxVE" --title "No TurnKey LXC Selected" --msgbox "It appears that no TurnKey LXC container was selected" 10 68
   msg "Done"
   exit
 }
@@ -153,7 +156,7 @@ function select_storage() {
   else
     local STORAGE
     while [ -z "${STORAGE:+x}" ]; do
-      STORAGE=$(whiptail --backtitle "Proxmox VE Helper Scripts" --title "Storage Pools" --radiolist \
+      STORAGE=$(whiptail --backtitle "Помощник от Samohosting.ru для установки LXC в ProxmoxVE" --title "Storage Pools" --radiolist \
         "Which storage pool you would like to use for the ${CONTENT_LABEL,,}?\n\n" \
         16 $(($MSG_MAX_LENGTH + 23)) 6 \
         "${MENU[@]}" 3>&1 1>&2 2>&3) || die "Menu aborted."
