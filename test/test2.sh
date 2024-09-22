@@ -6,7 +6,7 @@ source <(curl -s https://raw.githubusercontent.com/tteck/Proxmox/main/misc/build
 # https://github.com/tteck/Proxmox/raw/main/LICENSE
 
 function header_info {
-clear
+
 cat <<"EOF"
    _____         __  __  ____  _    _  ____   _____ _______ _____ _   _  _____   _____  _    _ 
   / ____|  /\   |  \/  |/ __ \| |  | |/ __ \ / ____|__   __|_   _| \ | |/ ____| |  __ \| |  | |
