@@ -21,8 +21,9 @@ read -r -p "Может лучше пива? <y/N> " prompt
 if [[ ${prompt,,} =~ ^(y|yes)$ ]]; then
   msg_info "Ищу ближайший магазин...\n"
   msg_ok "Близжайший магазин найден, выдвигаемся..\n"
-if [[ ${prompt,,} =~ ^(n|no)$ ]]; then
-  msg_info "Установщик покидает чат\n"
-  msg_ok "Completed Successfully!\n"
-fi
-  msg_info "нет, не пить - нельзя\n"
+ fi
+   if [[ ${prompt,,} =~ ^(n|no)$ ]]; then
+     msg_info "Установщик покидает чат\n"
+     msg_ok "Completed Successfully!\n"
+    fi
+      msg_info "нет, не пить - нельзя\n"
