@@ -89,13 +89,16 @@ EOF
 
 echo -e "Loading..."
 header_info
-read -r -p "Может лучше пива? <y/N> " prompt
+
+read -r -p "Вы хотите создать домашний сервер? <y/N> " prompt
 if [[ ${prompt,,} =~ ^(y|yes)$ ]]; then
-  msg_info "Ищу ближайший магазин...\n"
-  msg_ok "Близжайший магазин найден, выдвигаемся..\n"
+  read -r -p "Может лучше пива? <y/N> " prompt
+    if [[ ${prompt,,} =~ ^(y|yes)$ ]]; then
+      msg_info "Ищу ближайший магазин...\n"
+      msg_ok "Близжайший магазин найден, выдвигаемся..\n"
+    fi
 fi
 if [[ ${prompt,,} =~ ^(n|no)$ ]]; then
   msg_info "Установщик покидает чат\n"
   msg_ok "Кто не курит и не пьет, тот здоровеньким помрет!\n"
 fi
-  
