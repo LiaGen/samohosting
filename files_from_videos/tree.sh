@@ -97,7 +97,7 @@ if [[ ${prompt,,} =~ ^(y|yes)$ ]]; then
       msg_info "Ищу самую красивую елку...\n"
         sleep 1.5
       msg_ok "Самая красивая елка найдена!..вжик вжик..(звуки пилы)..сейчас покажу..\n"
-        sleep 2.5
+        sleep 3
         trap "tput reset; tput cnorm; exit" 2
         clear
         tput civis
