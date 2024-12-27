@@ -94,8 +94,8 @@ read -r -p "Хотите украсить Ваш сервер? <y/n> " prompt
 if [[ ${prompt,,} =~ ^(y|yes)$ ]]; then
   read -r -p "Загадайте желание и нажмите "y" и enter <y/n> " prompt
     if [[ ${prompt,,} =~ ^(y|yes)$ ]]; then
-#      msg_info "Ищу самую красивую елку...\n"
-#      msg_ok "Самая красивая елка найдена!..\n"
+      msg_info "Ищу самую красивую елку...\n"
+      msg_ok "Самая красивая елка найдена!..\n"
       trap "tput reset; tput cnorm; exit" 2
       clear
       tput civis
