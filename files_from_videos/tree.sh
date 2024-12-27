@@ -95,9 +95,9 @@ if [[ ${prompt,,} =~ ^(y|yes)$ ]]; then
   read -r -p "Загадайте желание и нажмите "y" и enter <y/n> " prompt
     if [[ ${prompt,,} =~ ^(y|yes)$ ]]; then
       msg_info "Ищу самую красивую елку...\n"
-        sleep 5.0
+        sleep 3.0
       msg_ok "Самая красивая елка найдена!..\n"
-        sleep 5.0
+        sleep 3.0
         trap "tput reset; tput cnorm; exit" 2
         clear
         tput civis
