@@ -100,7 +100,7 @@ if [[ ${prompt,,} =~ ^(y|yes)$ ]]; then
       trap "tput reset; tput cnorm; exit" 2
       clear
       tput civis
-      lin=20
+      lin=2
       col=$(($(tput cols) / 2))
       c=$((col-1))
       est=$((c-2))
