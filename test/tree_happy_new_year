@@ -96,11 +96,11 @@ if [[ ${prompt,,} =~ ^(y|yes)$ ]]; then
     if [[ ${prompt,,} =~ ^(y|yes)$ ]]; then
       msg_info "Ищу самую красивую елку...\n"
       msg_ok "Самая красивая елка найдена!..\n"
-      sleep 5
+      sleep 500
       trap "tput reset; tput cnorm; exit" 2
-      clear
+      #clear
       tput civis
-      lin=2
+      lin=20
       col=$(($(tput cols) / 2))
       c=$((col-1))
       est=$((c-2))
