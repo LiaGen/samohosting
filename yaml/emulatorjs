@@ -1,0 +1,31 @@
+services:
+  emulatorjs:
+    image: lscr.io/linuxserver/emulatorjs:latest
+    container_name: emulatorjs
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - SUBFOLDER=/ #optional
+    volumes:
+      - /portainer_data/retrogames/config:/config
+      - /portainer_data/retrogames/data:/data
+    ports:
+      - 3000:3000 #settings
+      - 80:80 #gaming
+      - 4001:4001 #optional
+    restart: unless-stopped
+  filebrowser:
+    image: filebrowser/filebrowser:s6
+    container_name: filebrowser
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+    ports:
+      - 8085:80
+    volumes:
+      - /portainer_data:/srv/app-data
+      - /portainer_data/media:/srv/media
+      - /portainer_data/data/general:/srv/general
+      - /portainer_data/data/db:/database
