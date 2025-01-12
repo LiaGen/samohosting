@@ -1,0 +1,584 @@
+pageInfo:
+  title: 'ПРИМЕР ВАШЕГО ДАШБОРДА '
+  description: >-
+    для удобной навигации без запоминания ip адресов сервисов вашего домашнего
+    сервера
+  navLinks:
+    - title: >-
+        Для добавления сервисов в этот пример - пишите на
+        dashboard@samohosting.ru
+      path: https://dashboard.samohosting.ru/
+      target: sametab
+    - title: Документация дашборда(english)
+      path: https://dashy.to/docs
+      target: newtab
+  footerText: ''
+appConfig:
+  theme: basic
+  layout: auto
+  iconSize: large
+  language: ru
+  statusCheck: false
+  statusCheckInterval: 60
+  auth:
+    enableGuestAccess: true
+    users:
+      - user: admin
+        hash: 8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918
+        type: admin
+    enableKeycloak: false
+  showSplashScreen: false
+  preventWriteToDisk: false
+  preventLocalSave: false
+  disableConfiguration: false
+  disableConfigurationForNonAdmin: true
+  allowConfigEdit: true
+  enableServiceWorker: false
+  disableContextMenu: true
+  disableUpdateChecks: false
+  disableSmartSort: true
+  enableErrorReporting: false
+sections:
+  - name: Clock & Weather
+    icon: far fa-cloud
+    displayData:
+      collapsed: false
+      hideForGuests: false
+      sortBy: default
+      rows: 1
+      cols: 1
+    widgets:
+      - type: clock
+        id: 0_1314_clock
+      - type: weather
+        options:
+          apiKey: efdbade728b37086877a5e83442004db
+          city: Moscow
+        id: 1_1314_weather
+    filteredItems: []
+  - name: Cryptowatch
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    widgets:
+      - type: crypto-watch-list
+        options:
+          currency: USD
+          sortBy: marketCap
+          assets:
+            - bitcoin
+            - ethereum
+            - monero
+            - solana
+            - polkadot
+        id: 0_1176_cryptowatchlist
+    filteredItems: []
+  - name: Exchange Rates
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    widgets:
+      - type: exchange-rates
+        options:
+          inputCurrency: USD
+          apiKey: a4b9dd2470ecfaaab2338e92
+          outputCurrencies:
+            - GBP
+            - EUR
+            - RUB
+            - CNY
+        id: 0_1346_exchangerates
+    filteredItems: []
+  - name: Ссылки быстрого доступа
+    icon: fas fa-list
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - &ref_0
+        title: samohoting.ru
+        description: или самохостинг.рф
+        icon: >-
+          https://github.com/LiaGen/samohosting/blob/main/dummiesguylogo.jpg?raw=true
+        url: https://www.samohosting.ru/
+        target: newtab
+        id: 0_22831_samohotingru
+      - &ref_1
+        title: homelab-for-dummies.fun
+        description: english version
+        icon: >-
+          https://github.com/LiaGen/samohosting/blob/main/dummiesguylogo.jpg?raw=true
+        url: https://homelab-for-dummies.fun/
+        target: newtab
+        id: 1_22831_homelabfordummiesfun
+      - &ref_2
+        title: 'Скрипты для Proxmox '
+        description: Proxmox VE Helper-Scripts
+        icon: >-
+          https://raw.githubusercontent.com/tteck/Proxmox/main/misc/images/logo.png
+        url: https://tteck.github.io/Proxmox/
+        id: 2_22831_proxmox
+      - &ref_3
+        title: Поиск опен сорс софта
+        description: awweso.me
+        icon: https://awweso.me/logo_complete_dark.svg
+        url: https://awweso.me/
+        id: 3_22831_
+    filteredItems:
+      - *ref_0
+      - *ref_1
+      - *ref_2
+      - *ref_3
+  - name: Сервера и Сервисы
+    icon: fas fa-server
+    items:
+      - &ref_4
+        title: Proxmox Server WEBUI
+        description: intel n100 \ 16GB RAM \ 512 GB SSD
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/proxmox-light.png
+        url: https://www.proxmox.com/en/proxmox-virtual-environment/overview
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        statusCheckAcceptCodes: '200'
+        id: 0_16241_proxmoxserverwebui
+      - &ref_5
+        title: Почта
+        description: веб клиент \ сервер
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/synology-mail-plus.png
+        url: https://www.samohosting.ru/
+        target: newtab
+        id: 1_16241_
+      - &ref_6
+        title: Portainer
+        description: GUI для управления Докером
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/portainer.png
+        url: https://www.samohosting.ru/
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 2_16241_portainer
+      - &ref_7
+        title: Proxmox Backup Server
+        description: сервис для бепакирования
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/proxmox.png
+        url: https://www.proxmox.com/en/proxmox-backup-server/overview
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        statusCheckAcceptCodes: '200'
+        id: 3_16241_proxmoxbackupserver
+      - &ref_8
+        title: Home-Assistant
+        description: ваш сервис управления умным домом
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/home-assistant.png
+        url: https://github.com/home-assistant/core
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        statusCheckAcceptCodes: '200'
+        id: 4_16241_homeassistant
+      - &ref_9
+        title: Pi-hole
+        description: DNS + Блокировка рекламы
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pi-hole.png
+        url: https://github.com/pi-hole/pi-hole
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        statusCheckAcceptCodes: '200'
+        id: 5_16241_pihole
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    filteredItems:
+      - *ref_4
+      - *ref_5
+      - *ref_6
+      - *ref_7
+      - *ref_8
+      - *ref_9
+  - name: Медиа
+    icon: fas fa-play
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - &ref_10
+        title: Ваше домашнее облако
+        description: nextcloud
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nextcloud.png
+        url: https://github.com/nextcloud/server
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 0_5357_
+      - &ref_11
+        title: Медиа сервер для аудио и видео
+        description: Jellyfin home media platform
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/jellyfin.png
+        url: https://github.com/jellyfin/jellyfin
+        id: 1_5357_
+      - &ref_12
+        title: Оптимизация видео архива
+        description: Tdarr сохранит вам место на диске архива
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tdarr.png
+        url: https://github.com/HaveAGitGat/Tdarr
+        target: newtab
+        id: 2_5357_
+      - &ref_13
+        title: Сохраняем видео \ аудио с ютуба
+        description: MeTube YouTube downloader
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/metube.png
+        url: https://github.com/alexta69/metube
+        id: 3_5357_
+      - &ref_14
+        title: Веб клиент qBittorrent
+        description: живет в докере, качает ваши линус образы в NAS
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/qbittorrent.png
+        url: https://github.com/qbittorrent/qBittorrent
+        target: newtab
+        id: 4_5357_qbittorrent
+    filteredItems:
+      - *ref_10
+      - *ref_11
+      - *ref_12
+      - *ref_13
+      - *ref_14
+  - name: Виртуальные машины
+    icon: fas fa-desktop
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - &ref_15
+        title: LinuxMint
+        description: LDME6 Testing VM
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/linux-mint.png
+        url: https://www.samohosting.ru/
+        id: 0_18455_linuxmint
+      - &ref_16
+        title: MacOS Test VM
+        description: Sonoma clean VM
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/apple-alt.png
+        url: https://www.samohosting.ru/
+        id: 1_18455_macostestvm
+      - &ref_17
+        title: W11 Tiny
+        description: clean test vm
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/windows-10.png
+        url: https://www.samohosting.ru/
+        target: newtab
+        id: 2_18455_wtiny
+      - &ref_18
+        title: Linux VM
+        description: Linux Testing VM
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tux.png
+        url: https://www.samohosting.ru/
+        id: 3_18455_linuxvm
+    filteredItems:
+      - *ref_15
+      - *ref_16
+      - *ref_17
+      - *ref_18
+  - name: Инструменты
+    icon: fas fa-pencil
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - &ref_19
+        title: Создание диаграмм
+        description: draw.io
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/draw-io.png
+        url: https://app.diagrams.net/
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 0_11926_
+      - &ref_20
+        title: Создание сайтов
+        description: удобно упакованный в докер
+        icon: fab fa-wordpress
+        url: ' https://github.com/WordPress/WordPress'
+        target: newtab
+        id: 1_11926_
+      - &ref_21
+        title: Заметки
+        description: Triilium
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/trilium.png
+        url: https://github.com/zadam/trilium
+        target: newtab
+        id: 2_11926_
+    filteredItems:
+      - *ref_19
+      - *ref_20
+      - *ref_21
+  - name: Мониторинги
+    icon: fas fa-chart-line
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - &ref_22
+        title: Мониторинг
+        description: Uptime-Kuma
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/uptime-kuma.png
+        url: https://github.com/louislam/uptime-kuma
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 0_11887_
+    filteredItems:
+      - *ref_22
+  - name: Ваши Ссылки
+    icon: fas fa-link
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - &ref_23
+        title: Hackers News
+        description: news.ycombinator.com/newest
+        icon: fas fa-newspaper
+        url: https://news.ycombinator.com/newest
+        id: 0_10812_hackersnews
+      - &ref_24
+        title: YouTube
+        description: youtube.com
+        icon: fab fa-youtube
+        url: https://www.youtube.com/
+        target: newtab
+        id: 1_10812_youtube
+    filteredItems:
+      - *ref_23
+      - *ref_24
+  - name: GitHub links
+    icon: fab fa-github
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - &ref_25
+        title: awesome-selfhosted
+        description: самый большой набор open source
+        icon: ''
+        url: https://github.com/awesome-selfhosted/awesome-selfhosted
+        id: 0_1156_awesomeselfhosted
+      - &ref_26
+        title: awweso.me - удобный поиск для  awesome-selfhosted
+        description: https://awweso.me/
+        icon: https://awweso.me/logo_complete_dark.svg
+        url: https://github.com/mkitzmann/awwesome
+        id: 1_1156_awwesomeawesomeselfhosted
+      - &ref_27
+        title: доп. иконки для дашборда
+        description: github repo
+        icon: fab fa-github
+        url: https://github.com/walkxcode/dashboard-icons
+        id: 2_1156_
+    filteredItems:
+      - *ref_25
+      - *ref_26
+      - *ref_27
+  - name: Доп. приложения
+    icon: fab fa-medapps
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: true
+      hideForGuests: false
+    items:
+      - &ref_28
+        title: OpenProject
+        description: >-
+          задачи\канбан\гант чарт\вики - мощная система управления проектами и
+          задачами
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/openproject.png
+        url: https://github.com/opf/openproject
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        statusCheckAcceptCodes: '200'
+        id: 0_14142_openproject
+      - &ref_29
+        title: Planka
+        description: Проекты, доски, списки, карточки, лейблы, задачи
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/planka.png
+        url: https://github.com/plankanban/planka
+        target: newtab
+        id: 1_14142_planka
+      - &ref_30
+        title: Plane
+        description: альтернатива to JIRA, Linear and Height
+        icon: >-
+          https://camo.githubusercontent.com/3ace578ed41a4edd57ab3002dd1bfbda035f00183ffe686905787b428e0c841f/68747470733a2f2f706c616e652d6d61726b6574696e672e73332e61702d736f7574682d312e616d617a6f6e6177732e636f6d2f706c616e652d726561646d652f706c616e655f6c6f676f5f2e77656270
+        url: https://github.com/makeplane/plane
+        target: newtab
+        id: 2_14142_plane
+      - &ref_31
+        title: Penpot - альтернатива Figm'e
+        description: Penpot
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/penpot-light.png
+        url: https://github.com/penpot/penpot
+        target: newtab
+        id: 3_14142_penpotfigme
+      - &ref_32
+        title: Metabase
+        description: Визуализация и анализ данных
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/metabase.png
+        url: https://github.com/metabase/metabase
+        target: newtab
+        id: 4_14142_metabase
+      - &ref_33
+        title: Nginx-Proxy-Manager. NPM
+        description: сервис (WEB GUI) для управления конфигурацией NGINX
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nginx-proxy-manager.png
+        url: https://github.com/NginxProxyManager/nginx-proxy-manager
+        target: newtab
+        id: 5_14142_nginxproxymanagernpm
+      - &ref_34
+        title: node-red
+        description: Low-code programming for event-driven applications
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/node-red.png
+        url: https://github.com/node-red/node-red
+        target: newtab
+        id: 6_14142_nodered
+      - &ref_35
+        title: AdGuard-Home
+        description: Privacy protection center for you and your devices
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/adguard-home.png
+        url: https://github.com/AdguardTeam/AdGuardHome
+        target: newtab
+        id: 7_14142_adguardhome
+      - &ref_36
+        title: Littlelink
+        description: ваша персональная страничка с контактами
+        icon: >-
+          https://camo.githubusercontent.com/eabfd5af6fea648cf668b5a0d08c7b1f701eefc255651b0f9c945099b8a42921/68747470733a2f2f63646e2e636f74746c652e636c6f75642f6c6974746c656c696e6b2f6c6974746c656c696e6b2e676966
+        url: https://github.com/sethcottle/littlelink
+        target: newtab
+        id: 8_14142_littlelink
+      - &ref_37
+        title: LinkStack
+        description: ваша персональная страничка с контактами
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/linkstack.png
+        url: https://github.com/LinkStackOrg/LinkStack
+        target: newtab
+        id: 9_14142_linkstack
+      - &ref_38
+        title: Writefreely
+        description: минималистичный блог
+        icon: https://writefreely.org/img/writefreely.svg
+        url: https://github.com/writefreely/writefreely/tree/develop
+        target: newtab
+        id: 10_14142_writefreely
+    filteredItems:
+      - *ref_28
+      - *ref_29
+      - *ref_30
+      - *ref_31
+      - *ref_32
+      - *ref_33
+      - *ref_34
+      - *ref_35
+      - *ref_36
+      - *ref_37
+      - *ref_38
+  - name: Дубли того, что уже есть выше
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: true
+      hideForGuests: false
+    items:
+      - &ref_39
+        title: Immich
+        description: самохостинг управления фото и видео
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/immich.png
+        url: https://github.com/immich-app/immich
+        target: newtab
+        id: 0_25131_immich
+      - &ref_40
+        title: Photoprism
+        description: самохостинг управления фото и видео
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/photoprism.png
+        url: https://github.com/photoprism/photoprism
+        target: newtab
+        id: 1_25131_photoprism
+      - &ref_41
+        title: Homer - "A dead simple static HOMepage"
+        description: еще вариант дашборда
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/homer.png
+        url: https://github.com/bastienwirtz/homer
+        target: newtab
+        id: 2_25131_homeradeadsimplestatichomepage
+      - &ref_42
+        title: Heimdall
+        description: еще вариант дашборда
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/heimdall-light.png
+        url: https://github.com/linuxserver/Heimdall
+        target: newtab
+        id: 3_25131_heimdall
+      - &ref_43
+        title: Homarr
+        description: еще вариант дашборда
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/homarr.png
+        url: https://github.com/ajnart/homarr
+        target: newtab
+        id: 4_25131_homarr
+    filteredItems:
+      - *ref_39
+      - *ref_40
+      - *ref_41
+      - *ref_42
+      - *ref_43
