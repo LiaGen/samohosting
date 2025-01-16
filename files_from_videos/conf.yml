@@ -146,7 +146,7 @@ sections:
         description: intel n100 \ 16GB RAM \ 512 GB SSD
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/proxmox-light.png
-        url: https://localhost:80/
+        url: http://localhost:80/
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
