@@ -146,7 +146,7 @@ sections:
         description: intel n100 \ 16GB RAM \ 512 GB SSD
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/proxmox-light.png
-        url: https://www.proxmox.com/en/proxmox-virtual-environment/overview
+        url: https://localhost:80/
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -165,7 +165,7 @@ sections:
         description: GUI для управления Докером
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/portainer.png
-        url: https://www.samohosting.ru/
+        url: https://localhost:9443/
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
