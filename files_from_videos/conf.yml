@@ -183,7 +183,7 @@ sections:
         description: Мониторинг Вашего сервера
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/glances.png
         url: http://localhost:1002/
-        target: modal
+        target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
         statusCheckAcceptCodes: '200'
