@@ -90,7 +90,7 @@ sections:
         description: GUI для управления Докером
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/portainer.png
-        url: https://192.168.1.170:9443/
+        url: https://localhost:9443/
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -110,7 +110,7 @@ sections:
         title: Runtipi. Магазин приложений
         description: тут вы найдете много интересного
         icon: https://runtipi.io/_next/static/media/tipi.c0b9b68e.png
-        url: http://192.168.1.170:80
+        url: http://localhost:80
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -121,7 +121,7 @@ sections:
         description: admin\admin удобный доступ к вашим файлам на сервере
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/filebrowser.png
-        url: http://192.168.1.170:1001
+        url: http://localhost:1001
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -132,7 +132,7 @@ sections:
         description: ваш сервис управления умным домом
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/home-assistant.png
-        url: http://192.168.1.170/app-store/homeassistant-1
+        url: http://localhost/app-store/homeassistant-1
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -142,7 +142,7 @@ sections:
         title: Pi-hole
         description: DNS + Блокировка рекламы
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pi-hole.png
-        url: http://192.168.1.170/app-store/pihole
+        url: http://localhost/app-store/pihole
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -174,7 +174,7 @@ sections:
         title: Glances
         description: Мониторинг Вашего сервера
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/glances.png
-        url: http://192.168.1.170:1002/
+        url: http://localhost:1002/
         target: modal
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -185,7 +185,7 @@ sections:
         description: Uptime-Kuma
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/uptime-kuma.png
-        url: http://192.168.1.170/app-store/uptime-kuma
+        url: http://localhost/app-store/uptime-kuma
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -207,7 +207,7 @@ sections:
         title: Создание диаграмм
         description: draw.io
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/draw-io.png
-        url: http://192.168.1.170/app-store/drawio
+        url: http://localhost/app-store/drawio
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -216,14 +216,14 @@ sections:
         title: Заметки
         description: Memos
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/memos.png
-        url: http://192.168.1.170:1003
+        url: http://localhost:1003
         target: newtab
         id: 1_11926_
       - &ref_13
         title: Заметки
         description: Triilium
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/trilium.png
-        url: http://192.168.1.170/app-store/trilium
+        url: http://localhost/app-store/trilium
         target: newtab
         id: 2_11926_
     filteredItems:
@@ -244,7 +244,7 @@ sections:
         description: nextcloud
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nextcloud.png
-        url: http://192.168.1.170/app-store/nextcloud
+        url: http://localhost/app-store/nextcloud
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -253,14 +253,14 @@ sections:
         title: Медиа сервер для аудио и видео
         description: Jellyfin home media platform
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/jellyfin.png
-        url: http://192.168.1.170/app-store/jellyfin
+        url: http://localhost/app-store/jellyfin
         target: newtab
         id: 1_5357_
       - &ref_16
         title: Сохраняем видео \ аудио с ютуба
         description: MeTube YouTube downloader
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/metube.png
-        url: http://192.168.1.170/app-store/metube
+        url: http://localhost/app-store/metube
         target: newtab
         id: 2_5357_
       - &ref_17
@@ -268,7 +268,7 @@ sections:
         description: живет в докере, качает ваши линус образы в NAS
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/qbittorrent.png
-        url: http://192.168.1.170/app-store/qbittorrent
+        url: http://localhost/app-store/qbittorrent
         target: newtab
         id: 3_5357_qbittorrent
     filteredItems:
@@ -290,7 +290,7 @@ sections:
         description: виртуальная машина
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/windows-10.png
-        url: http://192.168.1.170/app-store/windows
+        url: http://localhost/app-store/windows
         target: newtab
         id: 0_18455_windows
       - &ref_19
