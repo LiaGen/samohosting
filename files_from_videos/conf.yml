@@ -31,23 +31,6 @@ appConfig:
   disableSmartSort: true
   enableErrorReporting: false
 sections:
-  - name: Clock & Weather
-    icon: far fa-cloud
-    displayData:
-      collapsed: false
-      hideForGuests: false
-      sortBy: default
-      rows: 1
-      cols: 4
-    widgets:
-      - type: clock
-        id: 0_1314_clock
-      - type: weather
-        options:
-          apiKey: efdbade728b37086877a5e83442004db
-          city: Moscow
-        id: 1_1314_weather
-    filteredItems: []
   - name: Ссылки быстрого доступа
     icon: fas fa-list
     displayData:
@@ -58,59 +41,61 @@ sections:
       hideForGuests: false
     items:
       - &ref_0
-        title: samohoting.ru
-        description: сайт проекта
+        title: samohosting.ru
+        description: сайт | youtube | telegram | чаты
         icon: >-
           https://raw.githubusercontent.com/LiaGen/samohosting/main/samohostinglogo4round.png
         url: https://www.samohosting.ru/
         target: newtab
-        id: 0_22831_samohotingru
+        id: 0_22831_samohostingru
       - &ref_1
-        title: YouTube
-        description: youtube канал проекта
-        icon: fab fa-youtube
-        url: https://www.youtube.com/@samohosting
-        target: newtab
-        id: 1_22831_youtube
-      - &ref_2
         title: 'Скрипты для Proxmox '
         description: Proxmox VE Helper-Scripts
         icon: >-
           https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/images/logo.png
         url: https://community-scripts.github.io/ProxmoxVE/
-        id: 2_22831_proxmox
-      - &ref_3
-        title: Поиск опен сорс софта
-        description: awweso.me
-        icon: https://awweso.me/logo_complete_dark.svg
-        url: https://awweso.me/
-        id: 3_22831_
-      - &ref_4
+        id: 1_22831_proxmox
+      - &ref_2
         title: доп. иконки для дашборда
         description: github repo
         icon: fab fa-github
         url: https://github.com/walkxcode/dashboard-icons
-        id: 4_22831_
+        id: 2_22831_
     filteredItems:
       - *ref_0
       - *ref_1
       - *ref_2
-      - *ref_3
-      - *ref_4
+  - name: Clock & Weather
+    icon: far fa-cloud
+    displayData:
+      collapsed: false
+      hideForGuests: false
+      sortBy: default
+      rows: 1
+      cols: 1
+    widgets:
+      - type: clock
+        id: 0_1314_clock
+      - type: weather
+        options:
+          apiKey: efdbade728b37086877a5e83442004db
+          city: Moscow
+        id: 1_1314_weather
+    filteredItems: []
   - name: Сервера и Сервисы
     icon: fas fa-server
     items:
-      - &ref_5
+      - &ref_3
         title: Portainer
         description: GUI для управления Докером
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/portainer.png
-        url: https://localhost:9443/
+        url: https://192.168.1.170:9443/
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
         id: 0_16241_portainer
-      - &ref_6
+      - &ref_4
         title: Proxmox Server WEBUI
         description: отредактируйте ссылку
         icon: >-
@@ -121,43 +106,43 @@ sections:
         statusCheckAllowInsecure: true
         statusCheckAcceptCodes: '200'
         id: 1_16241_proxmoxserverwebui
-      - &ref_7
+      - &ref_5
         title: Runtipi. Магазин приложений
         description: тут вы найдете много интересного
         icon: https://runtipi.io/_next/static/media/tipi.c0b9b68e.png
-        url: http://localhost:80
+        url: http://192.168.1.170:80
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
         statusCheckAcceptCodes: '200'
         id: 2_16241_runtipi
-      - &ref_8
+      - &ref_6
         title: Веб-файл браузер
-        description: удобный доступ к вашим файлам на сервере
+        description: admin\admin удобный доступ к вашим файлам на сервере
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/filebrowser.png
-        url: http://localhost:1001
+        url: http://192.168.1.170:1001
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
         statusCheckAcceptCodes: '200'
         id: 3_16241_
-      - &ref_9
+      - &ref_7
         title: Home-Assistant
         description: ваш сервис управления умным домом
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/home-assistant.png
-        url: https://github.com/home-assistant/core
+        url: http://192.168.1.170/app-store/homeassistant-1
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
         statusCheckAcceptCodes: '200'
         id: 4_16241_homeassistant
-      - &ref_10
+      - &ref_8
         title: Pi-hole
         description: DNS + Блокировка рекламы
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pi-hole.png
-        url: https://github.com/pi-hole/pi-hole
+        url: http://192.168.1.170/app-store/pihole
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -166,146 +151,16 @@ sections:
     displayData:
       sortBy: default
       rows: 1
-      cols: 1
+      cols: 2
       collapsed: false
       hideForGuests: false
     filteredItems:
+      - *ref_3
+      - *ref_4
       - *ref_5
       - *ref_6
       - *ref_7
       - *ref_8
-      - *ref_9
-      - *ref_10
-  - name: Медиа
-    icon: fas fa-play
-    displayData:
-      sortBy: default
-      rows: 1
-      cols: 1
-      collapsed: false
-      hideForGuests: false
-    items:
-      - &ref_11
-        title: Ваше домашнее облако
-        description: nextcloud
-        icon: >-
-          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nextcloud.png
-        url: https://github.com/nextcloud/server
-        target: newtab
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        id: 0_5357_
-      - &ref_12
-        title: Медиа сервер для аудио и видео
-        description: Jellyfin home media platform
-        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/jellyfin.png
-        url: https://github.com/jellyfin/jellyfin
-        id: 1_5357_
-      - &ref_13
-        title: Оптимизация видео архива
-        description: Tdarr сохранит вам место на диске архива
-        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tdarr.png
-        url: https://github.com/HaveAGitGat/Tdarr
-        target: newtab
-        id: 2_5357_
-      - &ref_14
-        title: Сохраняем видео \ аудио с ютуба
-        description: MeTube YouTube downloader
-        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/metube.png
-        url: https://github.com/alexta69/metube
-        id: 3_5357_
-      - &ref_15
-        title: Веб клиент qBittorrent
-        description: живет в докере, качает ваши линус образы в NAS
-        icon: >-
-          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/qbittorrent.png
-        url: https://github.com/qbittorrent/qBittorrent
-        target: newtab
-        id: 4_5357_qbittorrent
-    filteredItems:
-      - *ref_11
-      - *ref_12
-      - *ref_13
-      - *ref_14
-      - *ref_15
-  - name: Виртуальные машины
-    icon: fas fa-desktop
-    displayData:
-      sortBy: default
-      rows: 1
-      cols: 1
-      collapsed: false
-      hideForGuests: false
-    items:
-      - &ref_16
-        title: LinuxMint
-        description: LDME6 Testing VM
-        icon: >-
-          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/linux-mint.png
-        url: https://www.samohosting.ru/
-        id: 0_18455_linuxmint
-      - &ref_17
-        title: MacOS Test VM
-        description: Sonoma clean VM
-        icon: >-
-          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/apple-alt.png
-        url: https://www.samohosting.ru/
-        id: 1_18455_macostestvm
-      - &ref_18
-        title: W11 Tiny
-        description: clean test vm
-        icon: >-
-          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/windows-10.png
-        url: https://www.samohosting.ru/
-        target: newtab
-        id: 2_18455_wtiny
-      - &ref_19
-        title: Linux VM
-        description: Linux Testing VM
-        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tux.png
-        url: https://www.samohosting.ru/
-        id: 3_18455_linuxvm
-    filteredItems:
-      - *ref_16
-      - *ref_17
-      - *ref_18
-      - *ref_19
-  - name: Инструменты
-    icon: fas fa-pencil
-    displayData:
-      sortBy: default
-      rows: 1
-      cols: 1
-      collapsed: false
-      hideForGuests: false
-    items:
-      - &ref_20
-        title: Создание диаграмм
-        description: draw.io
-        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/draw-io.png
-        url: https://app.diagrams.net/
-        target: newtab
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        id: 0_11926_
-      - &ref_21
-        title: Создание сайтов
-        description: удобно упакованный в докер
-        icon: fab fa-wordpress
-        url: ' https://github.com/WordPress/WordPress'
-        target: newtab
-        id: 1_11926_
-      - &ref_22
-        title: Заметки
-        description: Triilium
-        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/trilium.png
-        url: https://github.com/zadam/trilium
-        target: newtab
-        id: 2_11926_
-    filteredItems:
-      - *ref_20
-      - *ref_21
-      - *ref_22
   - name: Мониторинги
     icon: fas fa-chart-line
     displayData:
@@ -315,18 +170,146 @@ sections:
       collapsed: false
       hideForGuests: false
     items:
-      - &ref_23
+      - &ref_9
+        title: Glances
+        description: Мониторинг Вашего сервера
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/glances.png
+        url: http://192.168.1.170:1002/
+        target: modal
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        statusCheckAcceptCodes: '200'
+        id: 0_11887_glances
+      - &ref_10
         title: Мониторинг
         description: Uptime-Kuma
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/uptime-kuma.png
-        url: https://github.com/louislam/uptime-kuma
+        url: http://192.168.1.170/app-store/uptime-kuma
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
-        id: 0_11887_
+        color: '#808080'
+        id: 1_11887_
     filteredItems:
-      - *ref_23
+      - *ref_9
+      - *ref_10
+  - name: Инструменты
+    icon: fas fa-pencil
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - &ref_11
+        title: Создание диаграмм
+        description: draw.io
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/draw-io.png
+        url: http://192.168.1.170/app-store/drawio
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 0_11926_
+      - &ref_12
+        title: Заметки
+        description: Memos
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/memos.png
+        url: http://192.168.1.170:1003
+        target: newtab
+        id: 1_11926_
+      - &ref_13
+        title: Заметки
+        description: Triilium
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/trilium.png
+        url: http://192.168.1.170/app-store/trilium
+        target: newtab
+        id: 2_11926_
+    filteredItems:
+      - *ref_11
+      - *ref_12
+      - *ref_13
+  - name: Медиа
+    icon: fas fa-play
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - &ref_14
+        title: Ваше домашнее облако
+        description: nextcloud
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nextcloud.png
+        url: http://192.168.1.170/app-store/nextcloud
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 0_5357_
+      - &ref_15
+        title: Медиа сервер для аудио и видео
+        description: Jellyfin home media platform
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/jellyfin.png
+        url: http://192.168.1.170/app-store/jellyfin
+        target: newtab
+        id: 1_5357_
+      - &ref_16
+        title: Сохраняем видео \ аудио с ютуба
+        description: MeTube YouTube downloader
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/metube.png
+        url: http://192.168.1.170/app-store/metube
+        target: newtab
+        id: 2_5357_
+      - &ref_17
+        title: Веб клиент qBittorrent
+        description: живет в докере, качает ваши линус образы в NAS
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/qbittorrent.png
+        url: http://192.168.1.170/app-store/qbittorrent
+        target: newtab
+        id: 3_5357_qbittorrent
+    filteredItems:
+      - *ref_14
+      - *ref_15
+      - *ref_16
+      - *ref_17
+  - name: Виртуальные машины
+    icon: fas fa-desktop
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - &ref_18
+        title: Windows
+        description: виртуальная машина
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/windows-10.png
+        url: http://192.168.1.170/app-store/windows
+        target: newtab
+        id: 0_18455_windows
+      - &ref_19
+        title: Linux
+        description: виртуальная машина
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tux.png
+        url: https://github.com/linuxserver/docker-webtop
+        id: 1_18455_linux
+      - &ref_20
+        title: MacOS
+        description: macOS виртуальная машина
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/apple-alt.png
+        url: https://github.com/dockur/macos
+        id: 2_18455_macos
+    filteredItems:
+      - *ref_18
+      - *ref_19
+      - *ref_20
   - name: Ваши Ссылки
     icon: fas fa-link
     displayData:
@@ -336,13 +319,13 @@ sections:
       collapsed: false
       hideForGuests: false
     items:
-      - &ref_24
+      - &ref_21
         title: Hackers News
         description: news.ycombinator.com/newest
         icon: fas fa-newspaper
         url: https://news.ycombinator.com/newest
         id: 0_10812_hackersnews
-      - &ref_25
+      - &ref_22
         title: Почта
         description: Ваш почтовый ящик
         icon: >-
@@ -350,6 +333,13 @@ sections:
         url: https://www.samohosting.ru/
         target: newtab
         id: 1_10812_
+      - &ref_23
+        title: Поиск опен сорс софта
+        description: awweso.me
+        icon: https://awweso.me/logo_complete_dark.svg
+        url: https://awweso.me/
+        id: 2_10812_
     filteredItems:
-      - *ref_24
-      - *ref_25
+      - *ref_21
+      - *ref_22
+      - *ref_23
