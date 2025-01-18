@@ -30,6 +30,14 @@ appConfig:
   disableUpdateChecks: false
   disableSmartSort: true
   enableErrorReporting: false
+  customColors:
+    basic:
+      primary: '#aabbc3'
+      background: '#0b1021'
+      background-darker: '#05070e'
+      font-headings: '"Segoe UI","Ariel","sans-serif"'
+      font-body: '"Roboto",serif'
+      font-monospace: '"PTMono","Courier New",monospace'
 sections:
   - name: Ссылки быстрого доступа
     icon: fas fa-list
@@ -189,7 +197,7 @@ sections:
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
-        color: '#808080'
+        color: ''
         id: 1_11887_
     filteredItems:
       - *ref_9
