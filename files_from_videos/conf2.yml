@@ -1,17 +1,13 @@
 pageInfo:
-  title: AIO DASHBOARD by SAMOHOSTING.RU
+  title: START.SAMOHOSTING.RU
   description: >-
-    all - in - one \ все - в - одном решение для запуска Вашего первого
-    домашнего сервера
-  navLinks:
-    - title: Документация дашборда(english)
-      path: https://dashy.to/docs
-      target: newtab
+    #2 Уровень. Еще больше приложений для установки через Portainer в Docker или используя Helper-Scripts.
   footerText: >-
     made by samohosting.ru . Big Thanks to @lissy93 for https://dashy.to/ .
     Связь с нами : email@samohosting.ru
   logo: >-
     https://raw.githubusercontent.com/LiaGen/samohosting/main/samohostinglogo4round.png
+  navLinks: []
 appConfig:
   theme: basic
   layout: auto
