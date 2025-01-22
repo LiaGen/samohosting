@@ -1,10 +1,11 @@
 pageInfo:
   title: START.SAMOHOSTING.RU
   description: >-
-    Все что нужно новичку в домашнем сервере - на однои дашборде | #1 Уровень. Установка только мышью.
+    Все что нужно новичку в домашнем сервере - на однои дашборде | #1 Уровень.
+    Установка только мышью.
   footerText: >-
     made by samohosting.ru . Big Thanks to @lissy93 for https://dashy.to/ .
-    Связь с нами : email@samohosting.ru
+    Связь со мной : email@samohosting.ru
   logo: >-
     https://raw.githubusercontent.com/LiaGen/samohosting/main/samohostinglogo4round.png
   navLinks: []
@@ -94,7 +95,7 @@ sections:
         description: GUI для управления Докером
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/portainer.png
-        url: https://localhost:9443/
+        url: https://192.168.1.132:9443/
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -114,7 +115,7 @@ sections:
         title: Runtipi. Магазин приложений
         description: тут вы найдете много интересного
         icon: https://runtipi.io/_next/static/media/tipi.c0b9b68e.png
-        url: http://localhost:80
+        url: http://192.168.1.132:80
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -125,7 +126,7 @@ sections:
         description: admin\admin удобный доступ к вашим файлам на сервере
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/filebrowser.png
-        url: http://localhost:1001
+        url: http://192.168.1.132:1001
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -136,7 +137,7 @@ sections:
         description: ваш сервис управления умным домом
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/home-assistant.png
-        url: http://localhost/app-store/homeassistant-1
+        url: http://192.168.1.132/app-store/homeassistant-1
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -147,7 +148,7 @@ sections:
         description: сервис синхронизации Ваших данных
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/syncthing.png
-        url: http://localhost/app-store/syncthing
+        url: http://192.168.1.132/app-store/syncthing
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -180,7 +181,7 @@ sections:
         description: Ваше домашнее облако
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nextcloud.png
-        url: http://localhost/app-store/nextcloud
+        url: http://192.168.1.132/app-store/nextcloud
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -189,7 +190,7 @@ sections:
         title: Immich.
         description: Фото и Видео галлерея и бекапы
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/immich.png
-        url: http://localhost/app-store/immich
+        url: http://192.168.1.132/app-store/immich
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -199,7 +200,7 @@ sections:
         description: Фото и Видео галлерея и бекапы
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/photoprism.png
-        url: http://localhost/app-store/photoprism
+        url: http://192.168.1.132/app-store/photoprism
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -221,14 +222,14 @@ sections:
         title: Медиа сервер для аудио и видео
         description: Jellyfin home media platform
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/jellyfin.png
-        url: http://localhost/app-store/jellyfin
+        url: http://192.168.1.132/app-store/jellyfin
         target: newtab
         id: 0_5357_
       - &ref_13
         title: Сохраняем видео \ аудио с ютуба
         description: MeTube YouTube downloader
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/metube.png
-        url: http://localhost/app-store/metube
+        url: http://192.168.1.132/app-store/metube
         target: newtab
         id: 1_5357_
       - &ref_14
@@ -236,7 +237,7 @@ sections:
         description: живет в докере, качает ваши линус образы в NAS
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/qbittorrent.png
-        url: http://localhost/app-store/qbittorrent
+        url: http://192.168.1.132/app-store/qbittorrent
         target: newtab
         id: 2_5357_qbittorrent
     filteredItems:
@@ -256,7 +257,7 @@ sections:
         title: Создание диаграмм
         description: draw.io
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/draw-io.png
-        url: http://localhost/app-store/drawio
+        url: http://192.168.1.132/app-store/drawio
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -265,14 +266,14 @@ sections:
         title: Заметки
         description: Memos
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/memos.png
-        url: http://localhost:1003
+        url: http://192.168.1.132:1003
         target: newtab
         id: 1_11926_
       - &ref_17
         title: Заметки
         description: Triilium
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/trilium.png
-        url: http://localhost/app-store/trilium
+        url: http://192.168.1.132/app-store/trilium
         target: newtab
         id: 2_11926_
       - &ref_18
@@ -280,7 +281,7 @@ sections:
         description: альтернатива Notion, Miro, Airtable
         icon: >-
           https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/affine/metadata/logo.jpg
-        url: http://localhost/app-store/affine
+        url: http://192.168.1.132/app-store/affine
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -290,7 +291,7 @@ sections:
         description: белая доска
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/excalidraw.png
-        url: http://localhost/app-store/excalidraw
+        url: http://192.168.1.132/app-store/excalidraw
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -314,7 +315,7 @@ sections:
         title: Kanboard
         description: канбан доска
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/kanboard.png
-        url: http://localhost/app-store/kanboard
+        url: http://192.168.1.132/app-store/kanboard
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -323,7 +324,7 @@ sections:
         title: Planka
         description: канбан доска
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/planka.png
-        url: http://localhost/app-store/planka
+        url: http://192.168.1.132/app-store/planka
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -332,7 +333,7 @@ sections:
         title: Vikunja
         description: список задач
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/vikunja.png
-        url: http://localhost/app-store/vikunja
+        url: http://192.168.1.132/app-store/vikunja
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -354,7 +355,7 @@ sections:
         title: Pi-hole
         description: DNS + Блокировка рекламы
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pi-hole.png
-        url: http://localhost/app-store/pihole
+        url: http://192.168.1.132/app-store/pihole
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -365,14 +366,14 @@ sections:
         description: блок рекламы и днс
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/adguard-home.png
-        url: http://localhost/app-store/adguard
+        url: http://192.168.1.132/app-store/adguard
         target: newtab
         id: 1_18449_adguardhome
       - &ref_25
         title: Сrowdsec
         description: Ваш личный ВЫШИБАЛА(да, как в баре, только для сетевого трафика)
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/crowdsec.png
-        url: http://localhost/app-store/crowdsec
+        url: http://192.168.1.132/app-store/crowdsec
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -383,7 +384,7 @@ sections:
         description: ip сканер устройств в Вашей сети
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/watchyourlan.png
-        url: http://localhost/app-store/watchyourlan
+        url: http://192.168.1.132/app-store/watchyourlan
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -408,7 +409,7 @@ sections:
         description: Мониторинг Вашего сервера
         icon: >-
           https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/glances/metadata/logo.jpg
-        url: http://localhost:1002/
+        url: http://192.168.1.132:1002/
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -419,7 +420,7 @@ sections:
         description: Uptime-Kuma
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/uptime-kuma.png
-        url: http://localhost/app-store/uptime-kuma
+        url: http://192.168.1.132/app-store/uptime-kuma
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -428,7 +429,7 @@ sections:
         title: Gotify
         description: личный сервер уведомлений
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/gotify.png
-        url: http://localhost/app-store/gotify
+        url: http://192.168.1.132/app-store/gotify
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -451,7 +452,7 @@ sections:
         description: Ваш личный AI
         icon: >-
           https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/ollama-cpu/metadata/logo.jpg
-        url: http://localhost/app-store/ollama-cpu
+        url: http://192.168.1.132/app-store/ollama-cpu
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -462,7 +463,7 @@ sections:
         description: Web чат интерфейс для Ollama
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/open-webui-light.png
-        url: http://localhost/app-store/open-webui
+        url: http://192.168.1.132/app-store/open-webui
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -473,7 +474,7 @@ sections:
         description: Web-интерфейс с llama.cpp для моделей Alpaca
         icon: >-
           https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/serge/metadata/logo.jpg
-        url: http://localhost/app-store/serge
+        url: http://192.168.1.132/app-store/serge
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -497,26 +498,11 @@ sections:
         description: виртуальная машина
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/windows-10.png
-        url: http://localhost/app-store/windows
+        url: http://192.168.1.132/app-store/windows
         target: newtab
         id: 0_18455_windows
-      - &ref_34
-        title: Linux
-        description: виртуальная машина
-        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tux.png
-        url: https://github.com/linuxserver/docker-webtop
-        id: 1_18455_linux
-      - &ref_35
-        title: MacOS
-        description: macOS виртуальная машина
-        icon: >-
-          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/apple-alt.png
-        url: https://github.com/dockur/macos
-        id: 2_18455_macos
     filteredItems:
       - *ref_33
-      - *ref_34
-      - *ref_35
   - name: Авторизация и пароли
     icon: far fa-user-lock
     displayData:
@@ -526,16 +512,16 @@ sections:
       collapsed: false
       hideForGuests: false
     items:
-      - &ref_36
+      - &ref_34
         title: Authentik
         description: личный сервис авторизации
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/authentik.png
-        url: http://localhost/app-store/authentik
+        url: http://192.168.1.132/app-store/authentik
         target: newtab
         id: 0_19526_authentik
     filteredItems:
-      - *ref_36
+      - *ref_34
   - name: Уголок разработчика
     icon: far fa-code
     displayData:
@@ -545,30 +531,30 @@ sections:
       collapsed: false
       hideForGuests: false
     items:
-      - &ref_37
+      - &ref_35
         title: it-tools
         description: набор полезных утилит
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/it-tools-light.png
-        url: http://localhost/app-store/it-tools
+        url: http://192.168.1.132/app-store/it-tools
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
         statusCheckAcceptCodes: '200'
         id: 0_19480_ittools
-      - &ref_38
+      - &ref_36
         title: Gitea
         description: git сервис
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/gitea.png
-        url: http://localhost/app-store/gitea
+        url: http://192.168.1.132/app-store/gitea
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
         statusCheckAcceptCodes: '200'
         id: 1_19480_gitea
     filteredItems:
-      - *ref_37
-      - *ref_38
+      - *ref_35
+      - *ref_36
   - name: Ваши Ссылки
     icon: fas fa-link
     displayData:
@@ -578,13 +564,13 @@ sections:
       collapsed: false
       hideForGuests: false
     items:
-      - &ref_39
+      - &ref_37
         title: Hackers News
         description: news.ycombinator.com/newest
         icon: fas fa-newspaper
         url: https://news.ycombinator.com/newest
         id: 0_10812_hackersnews
-      - &ref_40
+      - &ref_38
         title: Почта
         description: Ваш почтовый ящик
         icon: >-
@@ -592,33 +578,9 @@ sections:
         url: https://www.samohosting.ru/
         target: newtab
         id: 1_10812_
-      - &ref_41
-        title: Поиск опен сорс софта
-        description: awweso.me
-        icon: https://awweso.me/logo_complete_dark.svg
-        url: https://awweso.me/
-        id: 2_10812_
     filteredItems:
-      - *ref_39
-      - *ref_40
-      - *ref_41
-  - name: Заголовок
-    icon: ''
-    displayData:
-      sortBy: default
-      rows: 1
-      cols: 1
-      collapsed: false
-      hideForGuests: false
-    items:
-      - &ref_42
-        title: Приложение
-        description: описание приложения
-        icon: ''
-        url: ''
-        id: 0_9691_
-    filteredItems:
-      - *ref_42
+      - *ref_37
+      - *ref_38
 pages:
   - name: '#2 Уровень. Docker и Helper-Scripts'
     path: /conf2.yml
