@@ -1,7 +1,8 @@
 pageInfo:
   title: START.SAMOHOSTING.RU
   description: >-
-    #2 Уровень. Еще больше приложений для установки через Portainer в Docker или используя Helper-Scripts.
+    #2 Уровень. Еще больше приложений для установки через Portainer в Docker или
+    используя Helper-Scripts.
   footerText: >-
     made by samohosting.ru . Big Thanks to @lissy93 for https://dashy.to/ .
     Связь с нами : email@samohosting.ru
@@ -35,12 +36,14 @@ appConfig:
       font-body: '"Roboto",serif'
       font-monospace: '"PTMono","Courier New",monospace'
 sections:
-  - name: Ссылки быстрого доступа
+  - name: >-
+      Для установки приложений с этой страницы Вам потребуются базовые знания
+      Portainer или Proxmox Helper Scripts. Видео о них ниже 
     icon: fas fa-list
     displayData:
       sortBy: default
       rows: 1
-      cols: 1
+      cols: 4
       collapsed: false
       hideForGuests: false
     items:
@@ -51,571 +54,196 @@ sections:
           https://raw.githubusercontent.com/LiaGen/samohosting/main/samohostinglogo4round.png
         url: https://www.samohosting.ru/
         target: newtab
-        id: 0_22831_samohostingru
+        id: 0_88173_samohostingru
       - &ref_1
+        title: Portainer. Docker GUI это удобно.
+        description: by samohosting.ru
+        icon: fab fa-youtube
+        url: https://www.youtube.com/watch?v=c1ZGRxsWaP8
+        target: newtab
+        id: 1_88173_portainerdockergui
+      - &ref_2
+        title: Proxmox Скрипты помощники
+        description: о Proxmox Helper-Scripts by samohosting.ru
+        icon: fab fa-youtube
+        url: https://www.youtube.com/watch?v=NItKUQMMU4s
+        target: newtab
+        id: 2_88173_proxmox
+      - &ref_3
+        title: PROXMOX HELPER SCRIPTS
+        description: ВАЖНЫЕ ИЗМЕНЕНИЯ В СКРИПТАХ ПОМОЩНИКАХ ПРОКСМОКС
+        icon: fab fa-youtube
+        url: https://www.youtube.com/watch?v=9cujIWW6azI
+        target: newtab
+        id: 3_88173_proxmoxhelperscripts
+      - &ref_4
         title: 'Скрипты для Proxmox '
         description: Proxmox VE Helper-Scripts
         icon: >-
           https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/images/logo.png
         url: https://community-scripts.github.io/ProxmoxVE/
-        id: 1_22831_proxmox
-      - &ref_2
-        title: доп. иконки для дашборда
-        description: github repo
-        icon: fab fa-github
-        url: https://github.com/walkxcode/dashboard-icons
-        id: 2_22831_
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 4_88173_proxmox
     filteredItems:
       - *ref_0
       - *ref_1
       - *ref_2
-  - name: Clock & Weather
-    icon: far fa-cloud
-    displayData:
-      collapsed: false
-      hideForGuests: false
-      sortBy: default
-      rows: 1
-      cols: 1
-    widgets:
-      - type: clock
-        id: 0_1314_clock
-      - type: weather
-        options:
-          apiKey: efdbade728b37086877a5e83442004db
-          city: Moscow
-        id: 1_1314_weather
-    filteredItems: []
-  - name: Сервера и Сервисы
-    icon: fas fa-server
-    items:
-      - &ref_3
-        title: Portainer
-        description: GUI для управления Докером
-        icon: >-
-          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/portainer.png
-        url: https://localhost:9443/
-        target: newtab
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        id: 0_16241_portainer
-      - &ref_4
-        title: Proxmox Server WEBUI
-        description: отредактируйте ссылку
-        icon: >-
-          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/proxmox-light.png
-        url: http://IP_ВАШЕГО_PROXMOX:8006/
-        target: newtab
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        statusCheckAcceptCodes: '200'
-        id: 1_16241_proxmoxserverwebui
-      - &ref_5
-        title: Runtipi. Магазин приложений
-        description: тут вы найдете много интересного
-        icon: https://runtipi.io/_next/static/media/tipi.c0b9b68e.png
-        url: http://localhost:80
-        target: newtab
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        statusCheckAcceptCodes: '200'
-        id: 2_16241_runtipi
-      - &ref_6
-        title: Веб-файл браузер
-        description: admin\admin удобный доступ к вашим файлам на сервере
-        icon: >-
-          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/filebrowser.png
-        url: http://localhost:1001
-        target: newtab
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        statusCheckAcceptCodes: '200'
-        id: 3_16241_
-      - &ref_7
-        title: Home-Assistant
-        description: ваш сервис управления умным домом
-        icon: >-
-          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/home-assistant.png
-        url: http://localhost/app-store/homeassistant-1
-        target: newtab
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        statusCheckAcceptCodes: '200'
-        id: 4_16241_homeassistant
-      - &ref_8
-        title: Syncthing
-        description: сервис синхронизации Ваших данных
-        icon: >-
-          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/syncthing.png
-        url: http://localhost/app-store/syncthing
-        target: newtab
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        statusCheckAcceptCodes: '200'
-        id: 5_16241_syncthing
-    displayData:
-      sortBy: default
-      rows: 1
-      cols: 2
-      collapsed: false
-      hideForGuests: false
-    filteredItems:
       - *ref_3
       - *ref_4
+  - name: >-
+      Proxmox Helper-scripts. Установка Готовых LXC контейнеров 1 командой в
+      Proxmox
+    icon: fas fa-terminal
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 4
+      collapsed: false
+      hideForGuests: false
+    items:
+      - &ref_5
+        title: ПослеУстановочный Скрипт
+        description: >-
+          делает много полезного, в том числе отключает табличку напоминание на
+          входе
+        icon: >-
+          https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/images/logo.png
+        url: >-
+          https://community-scripts.github.io/ProxmoxVE/scripts?id=post-pve-install
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 0_42490_
+      - &ref_6
+        title: IP-TAGS
+        description: добавляет ip теги контейнерам
+        icon: >-
+          https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/images/logo.png
+        url: https://community-scripts.github.io/ProxmoxVE/scripts?id=add-lxc-iptag
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 1_42490_iptags
+      - &ref_7
+        title: CasaOS LXC
+        description: для тех, кто хочет попробовать CASAOS
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/casaos.png
+        url: https://community-scripts.github.io/ProxmoxVE/scripts?id=casaos
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 2_42490_casaoslxc
+      - &ref_8
+        title: Ubuntu LXC
+        description: операционная система Ubuntu в LXC
+        icon: https://assets.ubuntu.com/v1/29985a98-ubuntu-logo32.png
+        url: https://community-scripts.github.io/ProxmoxVE/scripts?id=ubuntu
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 3_42490_ubuntulxc
+      - &ref_9
+        title: Debian LXC
+        description: операционная система Debian в LXC
+        icon: https://seeklogo.com/images/D/debian-logo-C136FDAF9E-seeklogo.com.png
+        url: https://community-scripts.github.io/ProxmoxVE/scripts?id=debian
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 4_42490_debianlxc
+      - &ref_10
+        title: Docker LXC
+        description: быстрое создание LXC с Docker и Portainer
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/docker.png
+        url: https://community-scripts.github.io/ProxmoxVE/scripts?id=docker
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 5_42490_dockerlxc
+      - &ref_11
+        title: OpenWrt VM
+        description: 'для тех, кто хочет попробовать OpenWrt '
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/openwrt.png
+        url: https://community-scripts.github.io/ProxmoxVE/scripts?id=openwrt
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 6_42490_openwrtvm
+      - &ref_12
+        title: Nginx Proxy Manager LXC
+        description: смотрите ролик на канале о реверс прокси
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nginx-proxy-manager.png
+        url: >-
+          https://community-scripts.github.io/ProxmoxVE/scripts?id=nginxproxymanager
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 7_42490_nginxproxymanagerlxc
+      - &ref_13
+        title: Pi-Alert LXC
+        description: смотрите ролик на канале о Pi-Alert
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pi-alert.png
+        url: https://community-scripts.github.io/ProxmoxVE/scripts?id=pialert
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 8_42490_pialertlxc
+      - &ref_14
+        title: TurnKey LXC
+        description: 'набор LXC от команды TurnKey. например FileServer = Ваш NAS '
+        icon: https://www.turnkeylinux.org/files/images/icons/erver_0.jpg
+        url: https://community-scripts.github.io/ProxmoxVE/scripts?id=turnkey
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 9_42490_turnkeylxc
+    filteredItems:
       - *ref_5
       - *ref_6
       - *ref_7
       - *ref_8
-  - name: Фото и Видео
-    icon: fas fa-camera-retro
-    displayData:
-      sortBy: default
-      rows: 1
-      cols: 1
-      collapsed: false
-      hideForGuests: false
-    items:
-      - &ref_9
-        title: Nextcloud
-        description: Ваше домашнее облако
-        icon: >-
-          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nextcloud.png
-        url: http://localhost/app-store/nextcloud
-        target: newtab
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        id: 0_10827_nextcloud
-      - &ref_10
-        title: Immich.
-        description: Фото и Видео галлерея и бекапы
-        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/immich.png
-        url: http://localhost/app-store/immich
-        target: newtab
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        id: 1_10827_immich
-      - &ref_11
-        title: PhotoPrism
-        description: Фото и Видео галлерея и бекапы
-        icon: >-
-          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/photoprism.png
-        url: http://localhost/app-store/photoprism
-        target: newtab
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        id: 2_10827_photoprism
-    filteredItems:
       - *ref_9
       - *ref_10
       - *ref_11
-  - name: Медиа
-    icon: fas fa-play
-    displayData:
-      sortBy: default
-      rows: 1
-      cols: 1
-      collapsed: false
-      hideForGuests: false
-    items:
-      - &ref_12
-        title: Медиа сервер для аудио и видео
-        description: Jellyfin home media platform
-        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/jellyfin.png
-        url: http://localhost/app-store/jellyfin
-        target: newtab
-        id: 0_5357_
-      - &ref_13
-        title: Сохраняем видео \ аудио с ютуба
-        description: MeTube YouTube downloader
-        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/metube.png
-        url: http://localhost/app-store/metube
-        target: newtab
-        id: 1_5357_
-      - &ref_14
-        title: Веб клиент qBittorrent
-        description: живет в докере, качает ваши линус образы в NAS
-        icon: >-
-          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/qbittorrent.png
-        url: http://localhost/app-store/qbittorrent
-        target: newtab
-        id: 2_5357_qbittorrent
-    filteredItems:
       - *ref_12
       - *ref_13
       - *ref_14
-  - name: Инструменты
-    icon: fas fa-pencil
+  - name: >-
+      Portainer(docker). Готовые сборки опен сорс приложений для домашнего
+      сервера
+    icon: fab fa-docker
     displayData:
       sortBy: default
       rows: 1
-      cols: 2
+      cols: 4
       collapsed: false
       hideForGuests: false
     items:
       - &ref_15
-        title: Создание диаграмм
-        description: draw.io
-        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/draw-io.png
-        url: http://localhost/app-store/drawio
-        target: newtab
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        id: 0_11926_
-      - &ref_16
-        title: Заметки
-        description: Memos
-        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/memos.png
-        url: http://localhost:1003
-        target: newtab
-        id: 1_11926_
-      - &ref_17
-        title: Заметки
-        description: Triilium
-        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/trilium.png
-        url: http://localhost/app-store/trilium
-        target: newtab
-        id: 2_11926_
-      - &ref_18
-        title: Affine
-        description: альтернатива Notion, Miro, Airtable
-        icon: >-
-          https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/affine/metadata/logo.jpg
-        url: http://localhost/app-store/affine
-        target: newtab
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        id: 3_11926_affine
-      - &ref_19
-        title: Excalidraw
-        description: белая доска
-        icon: >-
-          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/excalidraw.png
-        url: http://localhost/app-store/excalidraw
-        target: newtab
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        id: 4_11926_excalidraw
-    filteredItems:
-      - *ref_15
-      - *ref_16
-      - *ref_17
-      - *ref_18
-      - *ref_19
-  - name: Проекты\Задачи
-    icon: far fa-calendar-check
-    displayData:
-      sortBy: default
-      rows: 1
-      cols: 1
-      collapsed: false
-      hideForGuests: false
-    items:
-      - &ref_20
-        title: Kanboard
-        description: канбан доска
-        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/kanboard.png
-        url: http://localhost/app-store/kanboard
-        target: newtab
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        id: 0_14111_kanboard
-      - &ref_21
-        title: Planka
-        description: канбан доска
-        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/planka.png
-        url: http://localhost/app-store/planka
-        target: newtab
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        id: 1_14111_planka
-      - &ref_22
-        title: Vikunja
-        description: список задач
-        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/vikunja.png
-        url: http://localhost/app-store/vikunja
-        target: newtab
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        id: 2_14111_vikunja
-    filteredItems:
-      - *ref_20
-      - *ref_21
-      - *ref_22
-  - name: Сеть и Безопасность
-    icon: far fa-user-shield
-    displayData:
-      sortBy: default
-      rows: 1
-      cols: 1
-      collapsed: false
-      hideForGuests: false
-    items:
-      - &ref_23
-        title: Pi-hole
-        description: DNS + Блокировка рекламы
-        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pi-hole.png
-        url: http://localhost/app-store/pihole
-        target: newtab
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        statusCheckAcceptCodes: '200'
-        id: 0_18449_pihole
-      - &ref_24
-        title: AdGuard Home
-        description: блок рекламы и днс
-        icon: >-
-          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/adguard-home.png
-        url: http://localhost/app-store/adguard
-        target: newtab
-        id: 1_18449_adguardhome
-      - &ref_25
-        title: Сrowdsec
-        description: Ваш личный ВЫШИБАЛА(да, как в баре, только для сетевого трафика)
-        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/crowdsec.png
-        url: http://localhost/app-store/crowdsec
-        target: newtab
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        statusCheckAcceptCodes: '200'
-        id: 2_18449_rowdsec
-      - &ref_26
-        title: Watchyourlan
-        description: ip сканер устройств в Вашей сети
-        icon: >-
-          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/watchyourlan.png
-        url: http://localhost/app-store/watchyourlan
-        target: newtab
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        statusCheckAcceptCodes: '200'
-        id: 3_18449_watchyourlan
-    filteredItems:
-      - *ref_23
-      - *ref_24
-      - *ref_25
-      - *ref_26
-  - name: Мониторинги
-    icon: fas fa-chart-line
-    displayData:
-      sortBy: default
-      rows: 1
-      cols: 1
-      collapsed: false
-      hideForGuests: false
-    items:
-      - &ref_27
-        title: Glances
-        description: Мониторинг Вашего сервера
-        icon: >-
-          https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/glances/metadata/logo.jpg
-        url: http://localhost:1002/
-        target: newtab
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        statusCheckAcceptCodes: '200'
-        id: 0_11887_glances
-      - &ref_28
-        title: Мониторинг
-        description: Uptime-Kuma
-        icon: >-
-          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/uptime-kuma.png
-        url: http://localhost/app-store/uptime-kuma
-        target: newtab
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        id: 1_11887_
-      - &ref_29
-        title: Gotify
-        description: личный сервер уведомлений
-        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/gotify.png
-        url: http://localhost/app-store/gotify
-        target: newtab
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        id: 2_11887_gotify
-    filteredItems:
-      - *ref_27
-      - *ref_28
-      - *ref_29
-  - name: AI
-    icon: far fa-robot
-    displayData:
-      sortBy: default
-      rows: 1
-      cols: 1
-      collapsed: false
-      hideForGuests: false
-    items:
-      - &ref_30
-        title: Ollama
-        description: Ваш личный AI
-        icon: >-
-          https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/ollama-cpu/metadata/logo.jpg
-        url: http://localhost/app-store/ollama-cpu
-        target: newtab
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        statusCheckAcceptCodes: '200'
-        id: 0_138_ollama
-      - &ref_31
-        title: Open-webui
-        description: Web чат интерфейс для Ollama
-        icon: >-
-          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/open-webui-light.png
-        url: http://localhost/app-store/open-webui
-        target: newtab
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        statusCheckAcceptCodes: '200'
-        id: 1_138_openwebui
-      - &ref_32
-        title: Serge
-        description: Web-интерфейс с llama.cpp для моделей Alpaca
-        icon: >-
-          https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/serge/metadata/logo.jpg
-        url: http://localhost/app-store/serge
-        target: newtab
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        statusCheckAcceptCodes: '200'
-        id: 2_138_serge
-    filteredItems:
-      - *ref_30
-      - *ref_31
-      - *ref_32
-  - name: Виртуальные машины
-    icon: fas fa-desktop
-    displayData:
-      sortBy: default
-      rows: 1
-      cols: 1
-      collapsed: false
-      hideForGuests: false
-    items:
-      - &ref_33
         title: Windows
         description: виртуальная машина
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/windows-10.png
-        url: http://localhost/app-store/windows
+        url: https://github.com/dockur/windows
         target: newtab
-        id: 0_18455_windows
-      - &ref_34
+        id: 0_56092_windows
+      - &ref_16
         title: Linux
         description: виртуальная машина
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tux.png
         url: https://github.com/linuxserver/docker-webtop
-        id: 1_18455_linux
-      - &ref_35
+        id: 1_56092_linux
+      - &ref_17
         title: MacOS
         description: macOS виртуальная машина
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/apple-alt.png
         url: https://github.com/dockur/macos
-        id: 2_18455_macos
+        id: 2_56092_macos
     filteredItems:
-      - *ref_33
-      - *ref_34
-      - *ref_35
-  - name: Авторизация и пароли
-    icon: far fa-user-lock
-    displayData:
-      sortBy: default
-      rows: 1
-      cols: 1
-      collapsed: false
-      hideForGuests: false
-    items:
-      - &ref_36
-        title: Authentik
-        description: личный сервис авторизации
-        icon: >-
-          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/authentik.png
-        url: http://localhost/app-store/authentik
-        target: newtab
-        id: 0_19526_authentik
-    filteredItems:
-      - *ref_36
-  - name: Уголок разработчика
-    icon: far fa-code
-    displayData:
-      sortBy: default
-      rows: 1
-      cols: 1
-      collapsed: false
-      hideForGuests: false
-    items:
-      - &ref_37
-        title: it-tools
-        description: набор полезных утилит
-        icon: >-
-          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/it-tools-light.png
-        url: http://localhost/app-store/it-tools
-        target: newtab
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        statusCheckAcceptCodes: '200'
-        id: 0_19480_ittools
-      - &ref_38
-        title: Gitea
-        description: git сервис
-        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/gitea.png
-        url: http://localhost/app-store/gitea
-        target: newtab
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        statusCheckAcceptCodes: '200'
-        id: 1_19480_gitea
-    filteredItems:
-      - *ref_37
-      - *ref_38
-  - name: Ваши Ссылки
-    icon: fas fa-link
-    displayData:
-      sortBy: default
-      rows: 1
-      cols: 1
-      collapsed: false
-      hideForGuests: false
-    items:
-      - &ref_39
-        title: Hackers News
-        description: news.ycombinator.com/newest
-        icon: fas fa-newspaper
-        url: https://news.ycombinator.com/newest
-        id: 0_10812_hackersnews
-      - &ref_40
-        title: Почта
-        description: Ваш почтовый ящик
-        icon: >-
-          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/synology-mail-plus.png
-        url: https://www.samohosting.ru/
-        target: newtab
-        id: 1_10812_
-      - &ref_41
-        title: Поиск опен сорс софта
-        description: awweso.me
-        icon: https://awweso.me/logo_complete_dark.svg
-        url: https://awweso.me/
-        id: 2_10812_
-    filteredItems:
-      - *ref_39
-      - *ref_40
-      - *ref_41
-  - name: Заголовок
-    icon: ''
-    displayData:
-      sortBy: default
-      rows: 1
-      cols: 1
-      collapsed: false
-      hideForGuests: false
-    items:
-      - &ref_42
-        title: Приложение
-        description: описание приложения
-        icon: ''
-        url: ''
-        id: 0_9691_
-    filteredItems:
-      - *ref_42
+      - *ref_15
+      - *ref_16
+      - *ref_17
