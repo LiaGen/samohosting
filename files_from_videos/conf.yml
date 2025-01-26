@@ -83,15 +83,15 @@ sections:
     icon: fas fa-server
     items:
       - &ref_2
-        title: Portainer
+        title: Dockge
         description: GUI для управления Докером
         icon: >-
-          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/portainer.png
-        url: https://localhost:9443/
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dockge.png
+        url: https://localhost:5001/
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
-        id: 0_16241_portainer
+        id: 0_16241_dockge
       - &ref_3
         title: Proxmox Server WEBUI
         description: отредактируйте ссылку
