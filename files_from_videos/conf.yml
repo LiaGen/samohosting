@@ -87,7 +87,7 @@ sections:
         description: GUI для управления Докером
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dockge.png
-        url: https://localhost:5001/
+        url: http://localhost:5001/
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
