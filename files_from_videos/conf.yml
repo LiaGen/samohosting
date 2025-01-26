@@ -258,7 +258,7 @@ sections:
         title: Заметки
         description: Memos
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/memos.png
-        url: http://localhost:1003
+        url: http://localhost/app-store/memos
         target: newtab
         id: 1_11926_
       - &ref_16
