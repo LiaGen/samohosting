@@ -9,32 +9,6 @@ pageInfo:
   logo: >-
     https://raw.githubusercontent.com/LiaGen/samohosting/main/samohostinglogo6round.png
   navLinks: []
-appConfig:
-  theme: basic
-  layout: auto
-  iconSize: large
-  language: ru
-  statusCheck: false
-  statusCheckInterval: 60
-  showSplashScreen: false
-  preventWriteToDisk: false
-  preventLocalSave: false
-  disableConfiguration: false
-  disableConfigurationForNonAdmin: true
-  allowConfigEdit: true
-  enableServiceWorker: false
-  disableContextMenu: false
-  disableUpdateChecks: false
-  disableSmartSort: true
-  enableErrorReporting: false
-  customColors:
-    basic:
-      primary: '#aabbc3'
-      background: '#0b1021'
-      background-darker: '#05070e'
-      font-headings: '"Segoe UI","Ariel","sans-serif"'
-      font-body: '"Roboto",serif'
-      font-monospace: '"PTMono","Courier New",monospace'
 sections:
   - name: >-
       Для установки приложений с этой страницы Вам потребуются базовые знания
@@ -56,12 +30,12 @@ sections:
         target: newtab
         id: 0_88173_samohostingru
       - &ref_1
-        title: Portainer. Docker GUI это удобно.
+        title: Dockge - как использовать
         description: by samohosting.ru
         icon: fab fa-youtube
-        url: https://www.youtube.com/watch?v=c1ZGRxsWaP8
+        url: https://www.youtube.com/@samohosting
         target: newtab
-        id: 1_88173_portainerdockergui
+        id: 1_88173_dockge
       - &ref_2
         title: Proxmox Скрипты помощники
         description: о Proxmox Helper-Scripts by samohosting.ru
@@ -212,8 +186,8 @@ sections:
       - *ref_13
       - *ref_14
   - name: >-
-      Portainer(docker). Готовые сборки опен сорс приложений для домашнего
-      сервера
+      Dockge(docker). Готовые шаблоны для запуска  контейнера в 1 клик опен сорс
+      приложений для домашнего сервера
     icon: fab fa-docker
     displayData:
       sortBy: default
@@ -227,23 +201,39 @@ sections:
         description: виртуальная машина
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/windows-10.png
-        url: https://github.com/dockur/windows
+        url: http://localhost:5001/compose/dockur-windows
         target: newtab
-        id: 0_56092_windows
+        id: 0_84160_windows
       - &ref_16
         title: Linux
         description: виртуальная машина
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tux.png
-        url: https://github.com/linuxserver/docker-webtop
-        id: 1_56092_linux
+        url: http://localhost:5001/compose/webtop
+        target: newtab
+        id: 1_84160_linux
       - &ref_17
         title: MacOS
         description: macOS виртуальная машина
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/apple-alt.png
-        url: https://github.com/dockur/macos
-        id: 2_56092_macos
+        url: http://localhost:5001/compose/dockur-macos
+        target: newtab
+        id: 2_84160_macos
+      - &ref_18
+        title: OpenProject
+        description: kanban | gantt | задачи | ведение проектов
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/openproject.png
+        url: http://localhost:5001/compose/openproject
+        target: newtab
+        id: 3_84160_openproject
     filteredItems:
       - *ref_15
       - *ref_16
       - *ref_17
+      - *ref_18
+pages:
+  - name: '#2 Уровень. Docker и Helper-Scripts'
+    path: /conf2.yml
+    displayData:
+      hideForGuests: false
