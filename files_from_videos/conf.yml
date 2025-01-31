@@ -82,17 +82,6 @@ sections:
   - name: Сервера и Сервисы
     icon: fas fa-server
     items:
-      - &ref_2
-        title: Syncthing
-        description: сервис синхронизации Ваших данных
-        icon: >-
-          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/syncthing.png
-        url: http://localhost/app-store/syncthing
-        target: newtab
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        statusCheckAcceptCodes: '200'
-        id: 0_16241_syncthing
       - &ref_3
         title: Dockge
         description: GUI для управления Докером
@@ -173,7 +162,6 @@ sections:
       collapsed: false
       hideForGuests: false
     filteredItems:
-      - *ref_2
       - *ref_3
       - *ref_4
       - *ref_5
