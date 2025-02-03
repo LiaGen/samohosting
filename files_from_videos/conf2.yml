@@ -50,7 +50,30 @@ sections:
         url: https://www.youtube.com/watch?v=9cujIWW6azI
         target: newtab
         id: 3_88173_proxmoxhelperscripts
+    filteredItems:
+      - *ref_0
+      - *ref_1
+      - *ref_2
+      - *ref_3
+  - name: >-
+      Ссылки на Ваш Dockge(Докдж) с уже предподготовленными шаблонами и на сайт
+      Helper Scripts
+    icon: ''
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 4
+      collapsed: false
+      hideForGuests: false
+    items:
       - &ref_4
+        title: Dockge
+        description: GUI для управления Докером
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dockge.png
+        url: http://192.168.1.14:5001/
+        target: newtab
+        id: 0_61845_dockge
+      - &ref_5
         title: 'Скрипты для Proxmox '
         description: Proxmox VE Helper-Scripts
         icon: >-
@@ -59,13 +82,10 @@ sections:
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
-        id: 4_88173_proxmox
+        id: 1_61845_proxmox
     filteredItems:
-      - *ref_0
-      - *ref_1
-      - *ref_2
-      - *ref_3
       - *ref_4
+      - *ref_5
   - name: >-
       Proxmox Helper-scripts. Установка Готовых LXC контейнеров 1 командой в
       Proxmox
@@ -77,7 +97,7 @@ sections:
       collapsed: false
       hideForGuests: false
     items:
-      - &ref_5
+      - &ref_6
         title: ПослеУстановочный Скрипт
         description: >-
           делает много полезного, в том числе отключает табличку напоминание на
@@ -90,7 +110,7 @@ sections:
         statusCheck: true
         statusCheckAllowInsecure: true
         id: 0_42490_
-      - &ref_6
+      - &ref_7
         title: IP-TAGS
         description: добавляет ip теги контейнерам
         icon: >-
@@ -100,7 +120,7 @@ sections:
         statusCheck: true
         statusCheckAllowInsecure: true
         id: 1_42490_iptags
-      - &ref_7
+      - &ref_8
         title: CasaOS LXC
         description: для тех, кто хочет попробовать CASAOS
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/casaos.png
@@ -109,7 +129,7 @@ sections:
         statusCheck: true
         statusCheckAllowInsecure: true
         id: 2_42490_casaoslxc
-      - &ref_8
+      - &ref_9
         title: Ubuntu LXC
         description: операционная система Ubuntu в LXC
         icon: https://assets.ubuntu.com/v1/29985a98-ubuntu-logo32.png
@@ -118,7 +138,7 @@ sections:
         statusCheck: true
         statusCheckAllowInsecure: true
         id: 3_42490_ubuntulxc
-      - &ref_9
+      - &ref_10
         title: Debian LXC
         description: операционная система Debian в LXC
         icon: https://seeklogo.com/images/D/debian-logo-C136FDAF9E-seeklogo.com.png
@@ -127,7 +147,7 @@ sections:
         statusCheck: true
         statusCheckAllowInsecure: true
         id: 4_42490_debianlxc
-      - &ref_10
+      - &ref_11
         title: Docker LXC
         description: быстрое создание LXC с Docker и Portainer
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/docker.png
@@ -136,7 +156,7 @@ sections:
         statusCheck: true
         statusCheckAllowInsecure: true
         id: 5_42490_dockerlxc
-      - &ref_11
+      - &ref_12
         title: OpenWrt VM
         description: 'для тех, кто хочет попробовать OpenWrt '
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/openwrt.png
@@ -145,7 +165,7 @@ sections:
         statusCheck: true
         statusCheckAllowInsecure: true
         id: 6_42490_openwrtvm
-      - &ref_12
+      - &ref_13
         title: Nginx Proxy Manager LXC
         description: смотрите ролик на канале о реверс прокси
         icon: >-
@@ -156,7 +176,7 @@ sections:
         statusCheck: true
         statusCheckAllowInsecure: true
         id: 7_42490_nginxproxymanagerlxc
-      - &ref_13
+      - &ref_14
         title: Pi-Alert LXC
         description: смотрите ролик на канале о Pi-Alert
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pi-alert.png
@@ -165,7 +185,7 @@ sections:
         statusCheck: true
         statusCheckAllowInsecure: true
         id: 8_42490_pialertlxc
-      - &ref_14
+      - &ref_15
         title: TurnKey LXC
         description: 'набор LXC от команды TurnKey. например FileServer = Ваш NAS '
         icon: https://www.turnkeylinux.org/files/images/icons/erver_0.jpg
@@ -175,7 +195,6 @@ sections:
         statusCheckAllowInsecure: true
         id: 9_42490_turnkeylxc
     filteredItems:
-      - *ref_5
       - *ref_6
       - *ref_7
       - *ref_8
@@ -185,6 +204,7 @@ sections:
       - *ref_12
       - *ref_13
       - *ref_14
+      - *ref_15
   - name: >-
       Dockge(docker). Готовые шаблоны для запуска  контейнера в 1 клик опен сорс
       приложений для домашнего сервера
@@ -196,42 +216,42 @@ sections:
       collapsed: false
       hideForGuests: false
     items:
-      - &ref_15
+      - &ref_16
         title: Windows
         description: виртуальная машина
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/windows-10.png
-        url: http://localhost:5001/compose/dockur-windows
+        url: http://192.168.1.14:5001/compose/dockur-windows
         target: newtab
         id: 0_84160_windows
-      - &ref_16
+      - &ref_17
         title: Linux
         description: виртуальная машина
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tux.png
-        url: http://localhost:5001/compose/webtop
+        url: http://192.168.1.14:5001/compose/webtop
         target: newtab
         id: 1_84160_linux
-      - &ref_17
+      - &ref_18
         title: MacOS
         description: macOS виртуальная машина
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/apple-alt.png
-        url: http://localhost:5001/compose/dockur-macos
+        url: http://192.168.1.14:5001/compose/dockur-macos
         target: newtab
         id: 2_84160_macos
-      - &ref_18
+      - &ref_19
         title: OpenProject
         description: kanban | gantt | задачи | ведение проектов
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/openproject.png
-        url: http://localhost:5001/compose/openproject
+        url: http://192.168.1.14:5001/compose/openproject
         target: newtab
         id: 3_84160_openproject
     filteredItems:
-      - *ref_15
       - *ref_16
       - *ref_17
       - *ref_18
+      - *ref_19
 pages:
   - name: '#2 Уровень. Docker и Helper-Scripts'
     path: /conf2.yml
