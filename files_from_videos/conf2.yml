@@ -70,7 +70,7 @@ sections:
         title: Dockge
         description: GUI для управления Докером
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dockge.png
-        url: http://192.168.1.14:5001/
+        url: http://localhost:5001/
         target: newtab
         id: 0_61845_dockge
       - &ref_5
@@ -221,14 +221,14 @@ sections:
         description: виртуальная машина
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/windows-10.png
-        url: http://192.168.1.14:5001/compose/dockur-windows
+        url: http://localhost:5001/compose/dockur-windows
         target: newtab
         id: 0_84160_windows
       - &ref_17
         title: Linux
         description: виртуальная машина
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tux.png
-        url: http://192.168.1.14:5001/compose/webtop
+        url: http://localhost:5001/compose/webtop
         target: newtab
         id: 1_84160_linux
       - &ref_18
@@ -236,7 +236,7 @@ sections:
         description: macOS виртуальная машина
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/apple-alt.png
-        url: http://192.168.1.14:5001/compose/dockur-macos
+        url: http://localhost:5001/compose/dockur-macos
         target: newtab
         id: 2_84160_macos
       - &ref_19
@@ -244,7 +244,7 @@ sections:
         description: kanban | gantt | задачи | ведение проектов
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/openproject.png
-        url: http://192.168.1.14:5001/compose/openproject
+        url: http://localhost:5001/compose/openproject
         target: newtab
         id: 3_84160_openproject
     filteredItems:
