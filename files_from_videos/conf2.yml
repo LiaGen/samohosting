@@ -1,7 +1,7 @@
 pageInfo:
   title: START.SAMOHOSTING.RU
   description: >-
-    #2 Уровень. Еще больше приложений для установки через Portainer в Docker или
+    #2 Уровень. Еще больше приложений для установки через Dockge(docker web gui) или
     используя Helper-Scripts.
   footerText: >-
     made by samohosting.ru . Big Thanks to @lissy93 for https://dashy.to/ .
@@ -12,7 +12,7 @@ pageInfo:
 sections:
   - name: >-
       Для установки приложений с этой страницы Вам потребуются базовые знания
-      Portainer или Proxmox Helper Scripts. Видео о них ниже 
+      Dockge(docker web gui) или Proxmox Helper Scripts. Видео о них ниже 
     icon: fas fa-list
     displayData:
       sortBy: default
