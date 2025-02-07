@@ -1,11 +1,11 @@
 pageInfo:
   title: START.SAMOHOSTING.RU
   description: >-
-    #2 Уровень. Еще больше приложений для установки через Dockge(docker web gui) или
-    используя Helper-Scripts.
+    #2 Уровень. Еще больше приложений для установки через Dockge(docker web gui)
+    или используя Helper-Scripts.
   footerText: >-
     made by samohosting.ru . Big Thanks to @lissy93 for https://dashy.to/ .
-    Связь с нами : email@samohosting.ru
+    Связь со мной : email@samohosting.ru
   logo: >-
     https://raw.githubusercontent.com/LiaGen/samohosting/main/samohostinglogo6round.png
   navLinks: []
@@ -28,28 +28,28 @@ sections:
           https://raw.githubusercontent.com/LiaGen/samohosting/main/samohostinglogo4round.png
         url: https://www.samohosting.ru/
         target: newtab
-        id: 0_88173_samohostingru
+        id: 0_89234_samohostingru
       - &ref_1
         title: Dockge - как использовать
         description: by samohosting.ru
         icon: fab fa-youtube
         url: https://www.youtube.com/@samohosting
         target: newtab
-        id: 1_88173_dockge
+        id: 1_89234_dockge
       - &ref_2
         title: Proxmox Скрипты помощники
         description: о Proxmox Helper-Scripts by samohosting.ru
         icon: fab fa-youtube
         url: https://www.youtube.com/watch?v=NItKUQMMU4s
         target: newtab
-        id: 2_88173_proxmox
+        id: 2_89234_proxmox
       - &ref_3
         title: PROXMOX HELPER SCRIPTS
         description: ВАЖНЫЕ ИЗМЕНЕНИЯ В СКРИПТАХ ПОМОЩНИКАХ ПРОКСМОКС
         icon: fab fa-youtube
         url: https://www.youtube.com/watch?v=9cujIWW6azI
         target: newtab
-        id: 3_88173_proxmoxhelperscripts
+        id: 3_89234_proxmoxhelperscripts
     filteredItems:
       - *ref_0
       - *ref_1
@@ -247,11 +247,29 @@ sections:
         url: http://localhost:5001/compose/openproject
         target: newtab
         id: 3_84160_openproject
+      - &ref_20
+        title: Эмулятор Ретро игр в браузере
+        description: Emulatorjs
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/emulatorjs.png
+        url: http://localhost:5001/compose/emulatorjs
+        target: newtab
+        id: 4_84160_
+      - &ref_21
+        title: LibreOffice
+        description: офис в вашем браузере
+        icon: >-
+          https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/libreoffice-logo.png
+        url: http://localhost:5001/compose/libreoffice
+        target: newtab
+        id: 5_84160_libreoffice
     filteredItems:
       - *ref_16
       - *ref_17
       - *ref_18
       - *ref_19
+      - *ref_20
+      - *ref_21
 pages:
   - name: '#2 Уровень. Docker и Helper-Scripts'
     path: /conf2.yml
