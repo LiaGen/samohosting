@@ -46,6 +46,7 @@ install_requirements() {
 
 install_lcd_software() {
     echo -e "INFO: cloning acemagic git repo into folder s1display"
+    cd /
     git clone https://github.com/tjaworski/AceMagic-S1-LED-TFT-Linux.git s1display
     echo -e "INFO: installing s1panel.."
     wget -qO- https://raw.githubusercontent.com/LiaGen/samohosting/refs/heads/main/s1_minipc_display/samohosting/install -O /s1display/s1panel/install
