@@ -46,8 +46,9 @@ install_lcd_software() {
 
 install_samohosting_theme() {
     echo -e "INFO: loading theme samohosting.."
-    wget -qO- https://github.com/LiaGen/samohosting/blob/main/s1_minipc_display/samohosting.tar.gz | tar -xz -C /s1display/s1panel/themes --strip-components=1
-    wget -qO- https://raw.githubusercontent.com/LiaGen/samohosting/refs/heads/main/s1_minipc_display/samohosting/config.json  /s1display/s1panel/
+    mkdir /s1display/s1panel/themes/samohosting
+    wget -qO- https://github.com/LiaGen/samohosting/raw/main/s1_minipc_display/samohosting.tar.gz | tar -xz -C /s1display/s1panel/themes/samohosting --strip-components=1
+    wget -qO- https://raw.githubusercontent.com/LiaGen/samohosting/refs/heads/main/s1_minipc_display/samohosting/config.json  -O /s1display/s1panel/
     echo -e "INFO: theme samohosting loaded"
     echo -e "INFO: restarting s1panel service"
     systemctl daemon-reload
