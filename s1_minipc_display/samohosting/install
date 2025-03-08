@@ -1,0 +1,38 @@
+#!/bin/bash
+CURRENT_DIR=$(pwd)
+
+make_service()
+{
+cat <<EOF
+[Unit]
+\rDescription="S1 Panel"
+\r
+\r[Service]
+\rExecStart=$(which node) main.js
+\rWorkingDirectory=$CURRENT_DIR
+\rRestart=always
+\rRestartSec=10
+\rSyslogIdentifier=s1panel
+\rEnvironment=SERVICE=true
+\r
+\r[Install]
+\rWantedBy=multi-user.target
+\r
+EOF
+}
+
+echo "INFO: Home Directory is $CURRENT_DIR"
+npm i
+(cd gui; npm i --loglevel verbose)
+echo "INFO: Building GUI"
+(cd gui; npm run build)
+echo "INFO: Install Service..."
+echo -e "$(make_service)" > /etc/systemd/system/s1panel.service
+echo "INFO: Reload Service Daemon..."
+systemctl daemon-reload
+echo "INFO: Enable s1panel..."
+systemctl enable s1panel.service
+echo "INFO: Start s1panel..."
+systemctl start s1panel.service
+echo "INFO: Done!"
+systemctl status s1panel.service
