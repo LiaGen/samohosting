@@ -29,8 +29,8 @@ install_requirements() {
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
     echo -e "INFO: installing nvm 18.13.0 and npm@9.2.0 "
-    nvm install 18.13.0
-    nvm use 18.13.0
+    nvm install 18
+    nvm use 18
     npm install -g npm@9.2.0
     echo -e "INFO: installed nvm 18.13.0 and npm@9.2.0 "
     echo -e "INFO: installing git.."
@@ -43,6 +43,7 @@ install_lcd_software() {
     git clone https://github.com/tjaworski/AceMagic-S1-LED-TFT-Linux.git s1display
     echo -e "INFO: installing s1panel.."
     cd /s1display/s1panel
+    wget -qO- https://raw.githubusercontent.com/LiaGen/samohosting/refs/heads/main/s1_minipc_display/samohosting/install -O /s1display/s1panel/install
     ./install
 }
 
