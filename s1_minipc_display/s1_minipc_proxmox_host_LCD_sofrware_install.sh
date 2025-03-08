@@ -28,7 +28,7 @@ install_requirements() {
     npm install -g npm@9.2.0
     echo -e "installed nvm 18.13.0 and npm@9.2.0 "
     echo -e "installing git.."
-    apt install git -y
+    apt -y install git
     echo -e "git installed"
 }
 
