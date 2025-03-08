@@ -42,13 +42,14 @@ install_lcd_software() {
     echo -e "INFO: cloning acemagic git repo into folder s1display"
     git clone https://github.com/tjaworski/AceMagic-S1-LED-TFT-Linux.git s1display
     echo -e "INFO: installing s1panel.."
-    cd s1display/s1panel
+    cd /s1display/s1panel
     ./install
 }
 
 install_samohosting_theme() {
+    systemctl stop s1panel.service
     echo -e "INFO: loading theme samohosting.."
-    mkdir -p /s1display/s1panel/themes/samohosting
+    mkdir /s1display/s1panel/themes/samohosting
     wget -qO- https://github.com/LiaGen/samohosting/raw/main/s1_minipc_display/samohosting.tar.gz | tar -xz -C /s1display/s1panel/themes/samohosting --strip-components=1
     wget -qO- https://raw.githubusercontent.com/LiaGen/samohosting/refs/heads/main/s1_minipc_display/samohosting/config.json  -O /s1display/s1panel/config.json
     echo -e "INFO: theme samohosting loaded"
