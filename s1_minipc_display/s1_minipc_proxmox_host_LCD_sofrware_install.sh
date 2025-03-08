@@ -20,7 +20,7 @@ start() {
 install_requirements() {
     echo -e "install_requirements_funcion_started"
     echo -e "installing nvm.."
-    wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+    bash -c "$(wget -qLO - https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh)"
     echo -e "nvm installed"
     echo -e "installing nvm 18.13.0 and npm@9.2.0 "
     nvm install 18.13.0
@@ -28,7 +28,7 @@ install_requirements() {
     npm install -g npm@9.2.0
     echo -e "installed nvm 18.13.0 and npm@9.2.0 "
     echo -e "installing git.."
-    apt install git
+    apt install git -y
     echo -e "git installed"
 }
 
