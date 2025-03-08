@@ -1,0 +1,90 @@
+{
+   "listen": "127.0.0.1:8686",
+   "theme": "themes/samohosting/samohosting_s1_horizontal.json",
+   "poll": 500,
+   "refresh": 1600,
+   "heartbeat": 60000,
+   "debug_update": false,
+   "theme_list": [
+      {
+         "name": "samohosting_s1_horizontal",
+         "config": "themes/samohosting/samohosting_s1_horizontal.json"
+      }
+   ],
+   "sensors": [
+      {
+         "module": "sensors/clock.js"
+      },
+      {
+         "module": "sensors/calendar.js"
+      },
+      {
+         "module": "sensors/cpu_usage.js",
+         "config": {
+            "max_points": 300
+         }
+      },
+      {
+         "module": "sensors/cpu_temp.js",
+         "config": {
+            "max_points": 300,
+            "fahrenheit": false
+         }
+      },
+      {
+         "module": "sensors/cpu_power.js",
+         "config": {
+            "max_points": 300
+         }
+      },
+      {
+         "module": "sensors/network.js",
+         "config": {
+            "interface": "enp2s0",
+            "max_points": 300
+         }
+      },
+      {
+         "module": "sensors/network.js",
+         "config": {
+            "interface": "enp4s0",
+            "max_points": 300
+         }
+      },
+      {
+         "module": "sensors/memory.js",
+         "config": {
+            "max_points": 300
+         }
+      },
+      {
+         "module": "sensors/space.js",
+         "config": {
+            "mount_point": "/",
+            "max_points": 300
+         }
+      }
+   ],
+   "widgets": [
+      "widgets/text.js",
+      "widgets/custom_bar.js",
+      "widgets/line_chart.js",
+      "widgets/doughnut_chart.js",
+      "widgets/bar_chart.js",
+      "widgets/image.js",
+      "widgets/iconify.js"
+   ],
+   "canvas": {
+      "width": 320,
+      "height": 170,
+      "pixel": "RGB16_565"
+   },
+   "device": "1-8:1.1",
+   "led_config": {
+      "device": "/dev/ttyUSB0",
+      "theme": 2,
+      "speed": 2,
+      "intensity": 2
+   },
+   "portrait": true
+}
