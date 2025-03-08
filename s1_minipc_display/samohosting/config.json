@@ -1,5 +1,5 @@
 {
-   "listen": "127.0.0.1:8686",
+   "listen": "0.0.0.0:8686",
    "theme": "themes/samohosting/samohosting_s1_horizontal.json",
    "poll": 500,
    "refresh": 1600,
