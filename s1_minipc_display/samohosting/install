@@ -22,7 +22,7 @@ EOF
 }
 
 echo "INFO: Home Directory is $CURRENT_DIR"
-npm i
+npm i --loglevel verbose
 (cd gui; npm i --loglevel verbose)
 echo "INFO: Building GUI"
 (cd gui; npm run build)
