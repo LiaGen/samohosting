@@ -7,7 +7,10 @@ start() {
     echo -e "start_funcion_ended"
 }
 
-
+install() {
+    echo -e "isntall_funcion_started"
+    echo -e "start_funcion_ended"
+}
 
 start
 install
