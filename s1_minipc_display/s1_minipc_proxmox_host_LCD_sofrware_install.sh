@@ -28,11 +28,14 @@ install_requirements() {
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+    echo -e "INFO: Current node version is: "
+    node -v
     echo -e "INFO: installing nvm 18.13.0 and npm@9.2.0 "
     nvm install 18
     nvm use 18
     npm install -g npm@9.2.0
     echo -e "INFO: installed nvm 18.13.0 and npm@9.2.0 "
+    node -v
     echo -e "INFO: installing git.."
     apt -y install git
     echo -e "INFO: git installed"
