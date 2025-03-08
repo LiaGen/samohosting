@@ -19,6 +19,7 @@ start() {
 
 install_requirements() {
     echo -e "INFO: install_requirements_funcion_started"
+    apt update
     echo -e "INFO: installing nvm.."
     bash -c "$(wget -qLO - https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh)"
     echo -e "INFO: nvm installed"
