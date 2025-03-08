@@ -14,38 +14,38 @@ start() {
       echo -e "Утсановка прервана пользователем"
       exit
     fi
-    echo -e "start_funcion_ended"
+    echo -e "INFO: start_funcion_ended"
 }
 
 install_requirements() {
-    echo -e "install_requirements_funcion_started"
-    echo -e "installing nvm.."
+    echo -e "INFO: install_requirements_funcion_started"
+    echo -e "INFO: installing nvm.."
     bash -c "$(wget -qLO - https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh)"
-    echo -e "nvm installed"
-    echo -e "switching to nvm.."
+    echo -e "INFO: nvm installed"
+    echo -e "INFO: switching to nvm.."
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-    echo -e "installing nvm 18.13.0 and npm@9.2.0 "
+    echo -e "INFO: installing nvm 18.13.0 and npm@9.2.0 "
     nvm install 18.13.0
     nvm use 18.13.0
     npm install -g npm@9.2.0
-    echo -e "installed nvm 18.13.0 and npm@9.2.0 "
-    echo -e "installing git.."
+    echo -e "INFO: installed nvm 18.13.0 and npm@9.2.0 "
+    echo -e "INFO: installing git.."
     apt -y install git
-    echo -e "git installed"
+    echo -e "INFO: git installed"
 }
 
 install_lcd_software() {
-    echo -e "cloning acemagic git repo into folder s1display"
+    echo -e "INFO: cloning acemagic git repo into folder s1display"
     git clone https://github.com/tjaworski/AceMagic-S1-LED-TFT-Linux.git s1display
-    echo -e "installing s1panel.."
+    echo -e "INFO: installing s1panel.."
     cd s1display/s1panel
-    sudo ./install
+    ./install
 }
 
 install_samohosting_theme() {
-    echo -e "install_samohosting_theme func is to be made"
+    echo -e "INFO: install_samohosting_theme func is to be made"
 }
 
 start
