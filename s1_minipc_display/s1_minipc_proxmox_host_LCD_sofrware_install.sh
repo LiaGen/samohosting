@@ -48,7 +48,7 @@ install_lcd_software() {
 
 install_samohosting_theme() {
     echo -e "INFO: loading theme samohosting.."
-    mkdir /s1display/s1panel/themes/samohosting
+    mkdir -p /s1display/s1panel/themes/samohosting
     wget -qO- https://github.com/LiaGen/samohosting/raw/main/s1_minipc_display/samohosting.tar.gz | tar -xz -C /s1display/s1panel/themes/samohosting --strip-components=1
     wget -qO- https://raw.githubusercontent.com/LiaGen/samohosting/refs/heads/main/s1_minipc_display/samohosting/config.json  -O /s1display/s1panel/config.json
     echo -e "INFO: theme samohosting loaded"
