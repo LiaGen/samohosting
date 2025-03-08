@@ -34,8 +34,8 @@ install_requirements() {
     echo -e "INFO: Current node version is: "
     node -v
     echo -e "INFO: installing nvm 18.13.0 and npm@9.2.0 "
-    nvm install 20
-    nvm use 20
+    nvm install 18
+    nvm use 18
     npm install -g npm@9.2.0
     echo -e "INFO: installed nvm 18.13.0 and npm@9.2.0 "
     node -v
