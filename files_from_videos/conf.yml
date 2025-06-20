@@ -114,7 +114,7 @@ sections:
         id: 1_16241_runtipi
       - &ref_5
         title: Веб-файл браузер
-        description: admin\admin удобный доступ к вашим файлам на сервере
+        description: пароль генерируется в логах => http://localhost:5001/compose/filebrowser
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/filebrowser.png
         url: http://localhost:1001
