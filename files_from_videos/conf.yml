@@ -146,7 +146,7 @@ sections:
         id: 4_16241_syncthing
       - &ref_8
         title: Веб-файл браузер
-        description: пароль генерируется в логах => http://localhost:5001/compose/filebrowser
+        description: login: admin, пароль генерируется в логах => http://localhost:5001/compose/filebrowser
         icon: >-
           https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/filebrowser.png
         url: http://localhost:1001
